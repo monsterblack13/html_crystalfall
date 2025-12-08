@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body class="body-main">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
         <div class="container">
@@ -24,19 +26,26 @@
                     <li class="nav-item"><a class="nav-link" href="#">Trailers</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto navbar-right-items">
-                    <li class="nav-item"><a class="nav-link" href="#" title="Discord"><img src="images/discord.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="facebook"><img src="images/facebook.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="reddit"><img src="images/reddit.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="X"><img src="images/twitter-X.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="youtube"><img src="images/youtube.png" class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Discord"><img src="images/discord.png"
+                                class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="facebook"><img src="images/facebook.png"
+                                class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="reddit"><img src="images/reddit.png"
+                                class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="X"><img src="images/twitter-X.png"
+                                class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="youtube"><img src="images/youtube.png"
+                                class="img-fluid" alt=""></a></li>
                     <li class="nav-item"><a class="nav-link" href="#" role="button">
-                        <img src="images/enter-site.png" class="img-fluid" alt="Enter" height="20"></a>
+                            <img src="images/enter-site.png" class="img-fluid" alt="Enter" height="20"></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown">
                             Language
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end language-dropdown"
+                            aria-labelledby="languageDropdown">
                             <li><a class="dropdown-item" href="#"><img src="images/th-flag.png" alt=""> ไทย</a></li>
                             <li><a class="dropdown-item" href="#"><img src="images/en-flag.png" alt=""> English</a></li>
                         </ul>
@@ -45,6 +54,9 @@
             </div>
         </div>
     </nav>
+
+    <!-- Divider Section -->
+    <div class="divider-section"></div>
 
     <!-- 1 section -->
     <div class="hero-section">
@@ -76,78 +88,122 @@
     <div class="divider-section"></div>
 
     <!-- section2 -->
-    <section class="section-bg-2" style="padding: 80px 0px;">
-        <div class="container-fluid">
+    <section class="section-bg-2">
+        <div class="container" style="padding-top: 80px;">
+
             <div class="row">
-                <div class="col-12 text-center mb-4">
+                <div class="col-lg-12 text-center mb-4">
                     <p style="color: #CD8033; font-size: 16px;">Class / Character</p>
                     <img src="images/class-intro-title.png" class="img-fluid mb-4" alt="">
-                    <p style="color: #fff; font-size: 20px;">Choose your class and survive in a world destroyed by a mysterious asteroid, 
-fighting steampunk enemies in search of epic loot.</p>
+                    <p style="color: #fff; font-size: 20px;">Choose your class and survive in a world destroyed by a
+                        mysterious asteroid,
+                        fighting steampunk enemies in search of epic loot.</p>
                 </div>
-                <!-- Character Selection Buttons -->
-                <div class="col-lg-3 pe-4">
-                    <div class="d-flex flex-column gap-3">
-                        <button class="btn p-0 character-btn active" data-char="0">
-                            <img src="images/character1.png" alt="" class="img-fluid">
-                        </button>
-                        <button class="btn p-0 character-btn" data-char="1">
-                            <img src="images/character2.png" alt="" class="img-fluid">
-                        </button>
-                        <button class="btn p-0 character-btn" data-char="2">
-                            <img src="images/character3.png" alt="" class="img-fluid">
-                        </button>
-                    </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <!-- Character Selection Buttons -->
+            <div class="char-fl-btn">
+                <div class="d-flex flex-column gap-3">
+                    <button class="btn p-0 character-btn active" data-char="0">
+                        <img src="images/character1.png" alt="" class="img-fluid">
+                    </button>
+                    <button class="btn p-0 character-btn" data-char="1">
+                        <img src="images/character2.png" alt="" class="img-fluid">
+                    </button>
+                    <button class="btn p-0 character-btn" data-char="2">
+                        <img src="images/character3.png" alt="" class="img-fluid">
+                    </button>
                 </div>
-                
+            </div>
+
+            <div class="row">
+
                 <!-- Character Display -->
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div id="characterDisplay" class="character-display">
                         <!-- Character 1 -->
-                        <div class="character-slide active" style="background-image: url('images/cha-1.png');">
-                            <div class="character-overlay">
+                        <div class="character-slide">
 
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h2 class="mb-2" style="color: #F2BF50; font-size: 48px;">knight</h2>
-                                        </div>
-                                        <div class="col-md-6 text-md-end">
+                            <div class="container">
+                                <div class="row" style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                    <div class="col-lg-6">
+
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h2 style="color: #F2BF50; font-size: 48px;">knight1</h2>
                                             <a href="#" class="read-more-character">Learn More</a>
                                         </div>
+
+                                        <div class="ratio ratio-16x9 mb-4 character-video">
+                                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"
+                                                title="Character 1 Video" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <p class="text-light mb-4">1 Character description and backstory goes hereCharacter description and backstory goes here Character description and backstory goes here Character description and backstory goes here.</p>
+
                                     </div>
                                 </div>
-                                
-                                <!-- <h2 class="mb-2" style="color: #F2BF50; font-size: 48px;">knight</h2>
-                                <a href="#" class="read-more-character">Learn More</a> -->
-                                <div class="ratio ratio-16x9 mb-4 character-video">
-                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="Character 1 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>                                
-                                <p class="text-light mb-4">Character description and backstory goes here.</p>                                
                             </div>
+
+
+
                         </div>
+
                         <!-- Character 2 -->
-                        <div class="character-slide" style="background-image: url('char2-bg.jpg');">
-                            <div class="character-overlay">
-                                <div class="ratio ratio-16x9 mb-4 character-video">
-                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="Character 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="character-slide">
+                            <div class="container">
+                                <div class="row" style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                    <div class="col-lg-6">
+
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h2 style="color: #F2BF50; font-size: 48px;">knight2</h2>
+                                            <a href="#" class="read-more-character">Learn More</a>
+                                        </div>
+
+                                        <div class="ratio ratio-16x9 mb-4 character-video">
+                                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"
+                                                title="Character 1 Video" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <p class="text-light mb-4">2 Character description and backstory goes hereCharacter description and backstory goes here Character description and backstory goes here Character description and backstory goes here.</p>
+
+                                    </div>
                                 </div>
-                                <h2 class="text-white mb-2">Character Name 2</h2>
-                                <p class="text-light mb-4">Character description and backstory goes here.</p>
-                                <a href="#" class="btn btn-warning">Learn More</a>
                             </div>
                         </div>
+
                         <!-- Character 3 -->
-                        <div class="character-slide" style="background-image: url('char3-bg.jpg');">
-                            <div class="character-overlay">
-                                <div class="ratio ratio-16x9 mb-4 character-video">
-                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1" title="Character 3 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="character-slide">
+                           <div class="container">
+                                <div class="row" style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                    <div class="col-lg-6">
+
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h2 style="color: #F2BF50; font-size: 48px;">knight3</h2>
+                                            <a href="#" class="read-more-character">Learn More</a>
+                                        </div>
+
+                                        <div class="ratio ratio-16x9 mb-4 character-video">
+                                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1"
+                                                title="Character 1 Video" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+
+                                        <p class="text-light mb-4">3 Character description and backstory goes hereCharacter description and backstory goes here Character description and backstory goes here Character description and backstory goes here.</p>
+
+                                    </div>
                                 </div>
-                                <h2 class="text-white mb-2">Character Name 3</h2>
-                                <p class="text-light mb-4">Character description and backstory goes here.</p>
-                                <a href="#" class="btn btn-warning">Learn More</a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -163,7 +219,7 @@ fighting steampunk enemies in search of epic loot.</p>
                 <button class="btn p-0 carousel-arrow" id="prevBtn">
                     <img src="arrow-left.png" alt="Previous" class="arrow-icon">
                 </button>
-                
+
                 <!-- Screenshot Display -->
                 <div class="screenshot-wrapper">
                     <div id="screenshotCarousel" class="screenshot-carousel">
@@ -174,7 +230,7 @@ fighting steampunk enemies in search of epic loot.</p>
                         <img class="screenshot-slide" src="screenshot5.jpg" alt="Screenshot 5">
                     </div>
                 </div>
-                
+
                 <!-- Right Arrow -->
                 <button class="btn p-0 carousel-arrow" id="nextBtn">
                     <img src="arrow-right.png" alt="Next" class="arrow-icon">
@@ -185,7 +241,7 @@ fighting steampunk enemies in search of epic loot.</p>
 
     <script>
         document.querySelectorAll('.character-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const charIndex = this.getAttribute('data-char');
                 document.querySelectorAll('.character-slide').forEach(slide => slide.style.display = 'none');
                 document.querySelectorAll('.character-btn').forEach(b => b.classList.remove('active'));
@@ -197,7 +253,7 @@ fighting steampunk enemies in search of epic loot.</p>
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.screenshot-slide');
-        
+
         function showSlide(n) {
             slides.forEach(slide => {
                 slide.style.display = 'none';
@@ -208,20 +264,21 @@ fighting steampunk enemies in search of epic loot.</p>
                 slides[n].style.opacity = '1';
             }, 10);
         }
-        
-        document.getElementById('nextBtn').addEventListener('click', function() {
+
+        document.getElementById('nextBtn').addEventListener('click', function () {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         });
-        
-        document.getElementById('prevBtn').addEventListener('click', function() {
+
+        document.getElementById('prevBtn').addEventListener('click', function () {
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(currentSlide);
         });
-        
+
         showSlide(currentSlide);
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

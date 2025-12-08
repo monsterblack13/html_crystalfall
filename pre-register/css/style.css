@@ -76,6 +76,11 @@
     width: 100%;
 }
 
+
+.char-fl-btn {
+    position: absolute;left: 60px;
+}
+
 .character-btn {
     border: 0px solid transparent;
     transition: border-color 0.3s ease;
@@ -95,7 +100,7 @@
 /* Character Display */
 .character-display {
     position: relative;
-    height: 500px;
+    /* height: 500px; */
     border-radius: 10px;
     overflow: hidden;
 }
@@ -197,4 +202,25 @@
     background-repeat: repeat-x;
     background-size: 20px 25px;
     height: 25px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1714px) {
+    .char-fl-btn {
+        position: relative; /* Change from absolute to relative for mobile */
+        left: unset; /* Remove left positioning */
+        width: 100%; /* Take full width */
+        margin-bottom: 20px; /* Add some space below */
+    }
+
+    .char-fl-btn > div { /* Target the d-flex container inside char-fl-btn */
+        flex-direction: row !important; /* Arrange buttons horizontally */
+        justify-content: center; /* Center them horizontally */
+        gap: 1rem !important; /* Adjust gap for horizontal layout */
+    }
+
+    .char-fl-btn .character-btn img {
+        max-width: 80px; /* Adjust image size for mobile buttons */
+        height: auto;
+    }
 }
