@@ -307,8 +307,24 @@
     width: 47px;
     height: 47px;
 }
-
-
+.prereg-subtitle {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+.registration-card h1 {color: #fff; text-align: center;}
+input#prereg-email {
+    width: 100%;
+}
+input#prereg-phone {
+    width: 100%;
+}
+label {
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+}
 
 /* Mobile adjustments */
 @media (max-width: 1714px) {
