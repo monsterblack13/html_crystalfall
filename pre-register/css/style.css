@@ -299,6 +299,7 @@
     border-image: url(../images/modal-border.jpg) 66 round;
     background: #1d1c24 !important;
 }
+
 .clos-modal-btn {
     position: absolute;
     right: -50px;
@@ -307,51 +308,136 @@
     width: 47px;
     height: 47px;
 }
+
 .prereg-subtitle {
     color: #fff;
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.2rem;
 }
-.registration-card h1 {color: #fff; text-align: center;}
-input#prereg-email {
+
+.registration-card h1 {
+    color: #fff;
+    text-align: center;
+}
+.registration-card input {background: #15141B;
+    border: 1px solid #615545;
+    color: #F5EEE5;
     width: 100%;
 }
-input#prereg-phone {
-    width: 100%;
-}
+#prereg-policy {width: auto;}
+
 label {
     color: #fff;
     width: 100%;
     margin-top: 10px;
 }
+.prereg-error-message {
+    color: #FF6767;
+    width: 100% !important;
+    display: flex;
+}
+.iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
+    width: 100%;
+}
 
-/* Mobile adjustments */
-@media (max-width: 1714px) {
-    .char-fl-btn {
-        position: relative;
-        /* Change from absolute to relative for mobile */
-        left: unset;
-        /* Remove left positioning */
-        width: 100%;
-        /* Take full width */
-        margin-bottom: 20px;
-        /* Add some space below */
-    }
+.prereg-submit-btn {
+    margin-top: 30px !important;
+    position: relative;
+    padding: 10px 60px;
+    color: #2d2416;
+    background: linear-gradient(180deg, #f4d79f 0%, #d4a855 50%, #b8903a 100%);
+    border: 3px solid #8b6f3f;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 5px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
 
-    .char-fl-btn>div {
-        /* Target the d-flex container inside char-fl-btn */
-        flex-direction: row !important;
-        /* Arrange buttons horizontally */
-        justify-content: center;
-        /* Center them horizontally */
-        gap: 1rem !important;
-        /* Adjust gap for horizontal layout */
-    }
+.prereg-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -11px;
+    transform: translateY(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #000 0%, #000 50%, #000 100%);
+    border: 2px solid #8b6f3f;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
 
-    .char-fl-btn .character-btn img {
-        max-width: 80px;
-        /* Adjust image size for mobile buttons */
-        height: auto;
+.prereg-submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -11px;
+    transform: translateY(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #000 0%, #000 50%, #000 100%);
+    border: 2px solid #8b6f3f;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.prereg-submit-btn:hover {
+    background: linear-gradient(180deg, #ffeac2 0%, #e4b865 50%, #c89f4a 100%);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3),
+        0 8px 20px rgba(212, 168, 85, 0.4);
+    transform: translateY(-2px);
+}
+
+.prereg-submit-btn:active {
+    transform: translateY(0);
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.3),
+        0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* เพิ่มเงาเพื่อสร้างมิติ */
+.button-container::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: transparent;
+    border: 1px solid rgba(139, 111, 63, 0.3);
+    pointer-events: none;
+
+    /* Mobile adjustments */
+    @media (max-width: 1714px) {
+        .char-fl-btn {
+            position: relative;
+            /* Change from absolute to relative for mobile */
+            left: unset;
+            /* Remove left positioning */
+            width: 100%;
+            /* Take full width */
+            margin-bottom: 20px;
+            /* Add some space below */
+        }
+
+        .char-fl-btn>div {
+            /* Target the d-flex container inside char-fl-btn */
+            flex-direction: row !important;
+            /* Arrange buttons horizontally */
+            justify-content: center;
+            /* Center them horizontally */
+            gap: 1rem !important;
+            /* Adjust gap for horizontal layout */
+        }
+
+        .char-fl-btn .character-btn img {
+            max-width: 80px;
+            /* Adjust image size for mobile buttons */
+            height: auto;
+        }
     }
 }
