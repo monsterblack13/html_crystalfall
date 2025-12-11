@@ -23,9 +23,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Introduction</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Trailers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="ctf-nav-register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="ctf-nav-introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="ctf-nav-trailers">Trailers</a></li>
                 </ul>
                 
                 <ul class="navbar-nav ms-auto navbar-right-items">
@@ -49,8 +49,9 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end language-dropdown"
                             aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#"><img src="images/th-flag.png" alt=""> ไทย</a></li>
-                            <li><a class="dropdown-item" href="#"><img src="images/en-flag.png" alt=""> English</a></li>
+                            <li><a class="dropdown-item lang-link" href="?lang=th" data-lang="th"><img src="images/th-flag.png" alt="ไทย"> ไทย</a></li>
+                            <li><a class="dropdown-item lang-link" href="?lang=en" data-lang="en"><img src="images/en-flag.png" alt="English"> English</a></li>
+                            <li><a class="dropdown-item lang-link" href="?lang=id" data-lang="id"><img src="images/id-flag.png" alt="Bahasa"> Bahasa</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,17 +75,12 @@
         </div>
 
 
-
-
-
-
-
         <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
             <img src="images/main-logo.png" alt="Crystal Fall" class="mb-4 img-fluid">
             <!-- <h1 class="hero-title mb-2">CLASSIC HACK ‘N’ SLASH ARPG</h1> -->
-            <p class="hero-subtitle mb-4">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY</p>
+            <p class="hero-subtitle mb-4" id="ctf-head-text">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY</p>
             <div class="mb-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img src="images/pre-regis-btn.png" class="img-fluid" alt="Pre-Register"></a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal" id="ctf-head-preRegModal"><img src="images/pre-regis-btn.png" class="img-fluid" alt="Pre-Register"></a>
             </div>
             <div>
                 <a href="#"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>
@@ -106,9 +102,9 @@
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
-                    <p style="color: #CD8033; font-size: 16px;">Class / Character</p>
-                    <img src="images/class-intro-title.png" class="img-fluid mb-4" alt="">
-                    <p style="color: #fff; font-size: 20px;">Choose your class and survive in a world destroyed by a
+                    <p style="color: #CD8033; font-size: 16px;" id="ctf-class-character">Class / Character</p>
+                    <img src="images/class-intro-title.png" class="img-fluid mb-4" alt="" id="ctf-class-intro-title">
+                    <p  style="color: #fff; font-size: 20px;" id="ctf-class-description">Choose your class and survive in a world destroyed by a
                         mysterious asteroid,
                         fighting steampunk enemies in search of epic loot.</p>
                 </div>
@@ -121,7 +117,7 @@
             <!-- Character Selection Buttons -->
             <div class="char-fl-btn">
                 <div class="d-flex flex-column gap-3">
-                    <button class="btn p-0 character-btn active" data-char="0">
+                    <button class="btn p-0 character-btn active" data-char="0"> 
                         <img src="images/character1.png" alt="" class="img-fluid">
                     </button>
                     <button class="btn p-0 character-btn" data-char="1">
@@ -142,23 +138,22 @@
                         <div class="character-slide">
 
                             <div class="container">
-                                <div class="row"
-                                    style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                <div class="row bg-character-1">
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;">knight1</h2>
-                                            <a href="#" class="read-more-character">Learn More</a>
+                                            <h2 style="color: #F2BF50; font-size: 48px;">knight</h2>
+                                            <a href="#" class="read-more-character" id="ctf-class-learnMore1">Learn More</a>
                                         </div>
 
-                                        <div class="ratio ratio-16x9 mb-4 character-video">
-                                            <iframe src="https://www.youtube.com/embed/egeVZd5qWuQ?controls=1"
+                                        <div class="ratio ratio-16x9 mb-4 character-video custom-video-border">
+                                            <iframe src="https://www.youtube.com/embed/Lh1rfji4550?controls=0"
                                                 title="Character 1 Video" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe>
                                         </div>
 
-                                        <p class="text-light mb-4">1 Character description and backstory goes
+                                        <p class="text-light mb-4" id="ctf-class-description1">1 Character description and backstory goes
                                             hereCharacter description and backstory goes here Character description and
                                             backstory goes here Character description and backstory goes here.</p>
 
@@ -173,23 +168,22 @@
                         <!-- Character 2 -->
                         <div class="character-slide">
                             <div class="container">
-                                <div class="row"
-                                    style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                <div class="row bg-character-2">
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;">knight2</h2>
-                                            <a href="#" class="read-more-character">Learn More</a>
+                                            <h2 style="color: #F2BF50; font-size: 48px;">Gunner</h2>
+                                            <a href="#" class="read-more-character" id="ctf-class-learnMore2">Learn More</a>
                                         </div>
 
-                                        <div class="ratio ratio-16x9 mb-4 character-video">
-                                            <iframe src="https://www.youtube.com/embed/egeVZd5qWuQ?controls=1"
+                                        <div class="ratio ratio-16x9 mb-4 character-video custom-video-border">
+                                            <iframe src="https://www.youtube.com/embed/PWnhLoHn53I?controls=0"
                                                 title="Character 1 Video" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe>
                                         </div>
 
-                                        <p class="text-light mb-4">2 Character description and backstory goes
+                                        <p class="text-light mb-4" id="ctf-class-description2">2 Character description and backstory goes
                                             hereCharacter description and backstory goes here Character description and
                                             backstory goes here Character description and backstory goes here.</p>
 
@@ -201,23 +195,22 @@
                         <!-- Character 3 -->
                         <div class="character-slide">
                             <div class="container">
-                                <div class="row"
-                                    style="background: url(images/cha-1.png) no-repeat right top -99px;min-height: 680px;">
+                                <div class="row bg-character-3">
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;">knight3</h2>
-                                            <a href="#" class="read-more-character">Learn More</a>
+                                            <h2 style="color: #F2BF50; font-size: 48px;">Technomancer</h2>
+                                            <a href="#" class="read-more-character" id="ctf-class-learnMore3">Learn More</a>
                                         </div>
 
-                                        <div class="ratio ratio-16x9 mb-4 character-video">
-                                            <iframe src="https://www.youtube.com/embed/egeVZd5qWuQ?controls=1"
+                                        <div class="ratio ratio-16x9 mb-4 character-video custom-video-border">
+                                            <iframe src="https://www.youtube.com/embed/E1POkiN36rM?controls=0"
                                                 title="Character 1 Video" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                 allowfullscreen></iframe>
                                         </div>
 
-                                        <p class="text-light mb-4">3 Character description and backstory goes
+                                        <p class="text-light mb-4" id="ctf-class-description3">3 Character description and backstory goes
                                             hereCharacter description and backstory goes here Character description and
                                             backstory goes here Character description and backstory goes here.</p>
 
@@ -242,8 +235,8 @@
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
                     <!-- <p style="color: #CD8033; font-size: 16px;">Class / Character</p> -->
-                    <img src="images/trailer-title.png" class="img-fluid mb-4" alt="">
-                    <p style="color: #fff; font-size: 20px;">Kickstart your adventure in a classic hack ‘n’ slash Action
+                    <img src="images/trailer-title.png" class="img-fluid mb-4" alt="" id="ctf-trailer-title">
+                    <p style="color: #fff; font-size: 20px;" id="ctf-trailer-description">Kickstart your adventure in a classic hack ‘n’ slash Action
                         RPG—featuring randomized dungeons, procedural skills, and an endless endgame.</p>
                 </div>
             </div>
@@ -306,9 +299,9 @@
                 <div class="col-10 col-md-8 mx-auto text-center">
                     <img src="images/main-logo.png" alt="Crystal Fall" class="mb-4 img-fluid">
                     <!-- <h1 class="hero-title mb-2">CLASSIC HACK ‘N’ SLASH ARPG</h1> -->
-                    <p class="hero-subtitle mb-4">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY</p>
+                    <p class="hero-subtitle mb-4" id="ctf-footer-subtitle">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY</p>
                     <div class="mb-4">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img src="images/pre-regis-btn.png" class="img-fluid" alt="Pre-Register"></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal" id="ctf-preRegBtn"><img src="images/pre-regis-btn.png" class="img-fluid" alt="Pre-Register"></a>
                     </div>
 
                     <a href="#"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>
@@ -359,13 +352,19 @@
 </div>
 
 
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top">
+        <img src="images/arrow-up.png" alt="Back to Top" width="70" height="98">
+    </button>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 
     <!-- pre register -->
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/intlTelInput.min.js"></script>
-    <script src="https://media-web.playpark.com/pre-reg-v5/config.js"></script>
+    <!-- <script src="https://media-web.playpark.com/pre-reg-v5/config.js"></script> -->
+    <script src="js/config.js"></script>
     <script src="https://media-web.playpark.com/pre-reg-v5/messages.json.js"></script>
     <script src="https://media-web.playpark.com/pre-reg-v5/script.js"></script>
 </body>
