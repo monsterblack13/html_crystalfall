@@ -292,12 +292,12 @@ a:hover img {
 }
 
 .carousel-control-prev.slide-ctf-arrow {
-    left: -40px;
+    left: -102px;
 }
 
 
 .carousel-control-next.slide-ctf-arrow {
-    right: -40px;
+    right: -102px;
 }
 
 
@@ -358,7 +358,7 @@ a:hover img {
 
 .custom-video-border {
     border: 10px solid transparent;
-    border-image: url(../images/video-frame.jpg) 66 round;
+    border-image: url(../images/video-frame.png) 66 round;
     background: #1d1c24 !important;
 }
 
@@ -516,3 +516,12 @@ label {
         }
 
     }
+
+/* Mobile navbar social icons in a row */
+@media (max-width: 991px) {
+    #nav--social {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

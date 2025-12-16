@@ -59,6 +59,19 @@ backToTopBtn.addEventListener('click', () => {
     });
 });
 
+// Stop video playback when carousel slide changes
+document.addEventListener('DOMContentLoaded', function () {
+  const carousel = document.getElementById('slideCtfCarousel');
+
+  carousel.addEventListener('slide.bs.carousel', function () {
+    const iframes = carousel.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+      const src = iframe.src;
+      iframe.src = src; // reset iframe = หยุดวิดีโอ
+    });
+  });
+});
+
 // Language switcher: change text based on `?lang=` parameter (th / en / id)
 document.addEventListener('DOMContentLoaded', () => {
     function getLangFromUrl() {
@@ -77,9 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-learnMore1': 'Learn More',
             'ctf-class-learnMore2': 'Learn More',
             'ctf-class-learnMore3': 'Learn More',
-            'ctf-class-description1': 'Character description and backstory goes here.',
-            'ctf-class-description2': 'Character description and backstory goes here.',
-            'ctf-class-description3': 'Character description and backstory goes here.',
+            'ctf-class-description1': 'Powerful hybrid of human and lion, specializing in melee combat with blades and shields.',
+            'ctf-class-description2': 'Mutated foxes adept at dealing consistent damage from close or long range with pistols, rifles and shotguns.',
+            'ctf-class-description3': 'Enigmatic hybrids of human and crow, wielding steampunk staffs infused with aether.',
             'ctf-trailer-description': 'Kickstart your adventure in a classic hack ‘n’ slash Action RPG—featuring randomized dungeons, procedural skills, and an endless endgame.',
             'ctf-footer-subtitle': "CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY"
         },
