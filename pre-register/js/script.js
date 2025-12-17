@@ -94,10 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'Mutated foxes adept at dealing consistent damage from close or long range with pistols, rifles and shotguns.',
             'ctf-class-description3': 'Enigmatic hybrids of human and crow, wielding steampunk staffs infused with aether.',
             'ctf-trailer-description': 'Kickstart your adventure in a classic hack ‘n’ slash Action RPG—featuring randomized dungeons, procedural skills, and an endless endgame.',
-            'ctf-footer-subtitle': "CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY"
+            'ctf-footer-subtitle': "CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY",
+            'register-banner': 'Register'
         },
         th: {
-            'ctf-nav-register': 'ลงทะเบียน',
+            'ctf-nav-register': 'ลงทะเบียนล่วงหน้า',
             'ctf-nav-introduction': 'แนะนำ',
             'ctf-nav-trailers': 'ตัวอย่าง',
             'ctf-head-text': 'เกมแอ็คชั่น RPG แบบคลาสสิก<br>ที่มีความหลากหลายของการสร้างตัวละครไม่สิ้นสุด',
@@ -110,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'คำอธิบายตัวละครและภูมิหลังจะถูกใส่ที่นี่',
             'ctf-class-description3': 'คำอธิบายตัวละครและภูมิหลังจะถูกใส่ที่นี่',
             'ctf-trailer-description': 'เริ่มการผจญภัยของคุณในเกมแอ็คชั่น RPG แบบแอ็คชัน—มีดันเจี้ยนสุ่ม ทักษะที่เปลี่ยนแปลงได้ และเนื้อหาสำหรับเล่นได้ไม่สิ้นสุด',
-            'ctf-footer-subtitle': 'เกมแอ็คชั่น RPG แบบคลาสสิก<br>ที่มีความหลากหลายของการสร้างตัวละครไม่สิ้นสุด'
+            'ctf-footer-subtitle': 'เกมแอ็คชั่น RPG แบบคลาสสิก<br>ที่มีความหลากหลายของการสร้างตัวละครไม่สิ้นสุด',
+            'register-banner': 'จำนวนผู้ลงทะเบียน'
         },
         id: {
             'ctf-nav-register': 'Daftar',
@@ -126,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-class-description3': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-trailer-description': 'Mulai petualangan Anda dalam ARPG hack n\' slash klasik—menampilkan dungeon acak, keterampilan prosedural, dan konten endgame yang tak terbatas.',
-            'ctf-footer-subtitle': 'ARPG HACK N\' SLASH KLASIK<br>DENGAN KEBEBASAN BUILD TANPA BATAS'
+            'ctf-footer-subtitle': 'ARPG HACK N\' SLASH KLASIK<br>DENGAN KEBEBASAN BUILD TANPA BATAS',
+            'register-banner': 'Register'
         }
     };
 
@@ -217,4 +220,73 @@ document.addEventListener('DOMContentLoaded', () => {
         const lang = a.getAttribute('data-lang');
         a.href = window.location.pathname + '?lang=' + lang;
     });
+
+    // Milestone Logic
+    const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
+    // Fallback value if API fails
+    const FALLBACK_MILESTONE = 60000;
+
+    function formatNumber(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function updateMilestoneUI(count) {
+        // Update text
+        const countEl = document.getElementById('register-count');
+        if (countEl) {
+            countEl.innerText = formatNumber(count);
+        }
+
+        // Determine reward level (1-5)
+        let level = 1;
+        if (count >= 1000000) {
+            level = 5;
+        } else if (count >= 750000) {
+            level = 4;
+        } else if (count >= 500000) {
+            level = 3;
+        } else if (count >= 250000) {
+            level = 2;
+        } else {
+            level = 1;
+        }
+
+        // Suffix for language (except en)
+        let suffix = '';
+        if (selectedLang !== 'en') {
+            suffix = '-' + selectedLang;
+        }
+
+        // Update PC image
+        const pcImg = document.getElementById('ctf-reward-pc');
+        if (pcImg) {
+            pcImg.src = `images/reward-${level}${suffix}.png`;
+        }
+
+        // Update Mobile image
+        const mbImg = document.getElementById('ctf-reward-mobile');
+        if (mbImg) {
+            mbImg.src = `images/reward-${level}-mb${suffix}.png`;
+        }
+    }
+
+    function fetchMilestone() {
+        fetch(MILESTONE_API_URL)
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.Result === "Success" && typeof data.MileStone === 'number') {
+                    updateMilestoneUI(data.MileStone);
+                } else {
+                    console.warn('Invalid milestone data, using fallback.');
+                    updateMilestoneUI(FALLBACK_MILESTONE);
+                }
+            })
+            .catch(err => {
+                console.error('Error fetching milestone:', err);
+                updateMilestoneUI(FALLBACK_MILESTONE);
+            });
+    }
+
+    // Init milestone fetch
+    fetchMilestone();
 });

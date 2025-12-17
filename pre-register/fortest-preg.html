@@ -27,6 +27,7 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- pre register -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
+
 </head>
 
 <body class="body-main">
@@ -124,14 +125,48 @@
     <div class="divider-section"></div>
 
     <!-- section2 -->
-    <section class="section-bg-2">
-        <div class="container" style="padding-top: 80px;">
+    <section class="section-bg-reward">
+        <div class="container section-padding-top">
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
-                    <p style="color: #CD8033; font-size: 16px;" id="ctf-class-character">Class / Character</p>
+                    <img src="images/reward-title.png" class="img-fluid mb-4" alt="" id="ctf-reward-title">
+                    <p class="description-text" id="ctf-reward-description">Unlock exclusive rewards for the entire
+                        server as we reach each milestone.</p>
+                    <div class="arrow-banner-wrapper">
+                        <div class="arrow-banner banner-small">
+                            <div class="arrow-left"></div>
+                            <div class="banner-content"><span id="register-banner">Register</span><span
+                                    class="banner-span" id="register-count">0</span></div>
+                            <div class="arrow-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mx-auto text-center mb-5">
+                    <img src="images/reward-1.png" class="img-fluid d-none d-md-block" alt="" id="ctf-reward-pc">
+                    <img src="images/reward-1-mb.png" class="img-fluid d-block d-md-none" alt="" id="ctf-reward-mobile">
+                    <div class="my-5">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal">
+                            <img src="images/pre-regis-btn.png" class="img-fluid" alt="Pre-Register"
+                                id="ctf-reward-preRegModal">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Section -->
+    <div class="divider-section"></div>
+
+    <!-- section3 -->
+    <section class="section-bg-2">
+        <div class="container section-padding-top">
+
+            <div class="row">
+                <div class="col-10 col-md-8 mx-auto text-center mb-5">
                     <img src="images/class-intro-title.png" class="img-fluid mb-4" alt="" id="ctf-class-intro-title">
-                    <p style="color: #fff; font-size: 20px;" id="ctf-class-description">Choose your class and survive in
+                    <p class="description-text" id="ctf-class-description">Choose your class and survive in
                         a world destroyed by a
                         mysterious asteroid,
                         fighting steampunk enemies in search of epic loot.</p>
@@ -170,7 +205,7 @@
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;" class="text-uppercase">knight
+                                            <h2 class="text-uppercase character-name">knight
                                             </h2>
                                             <a href="#" class="read-more-character" id="ctf-class-learnMore1">Learn
                                                 More</a>
@@ -201,7 +236,7 @@
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;" class="text-uppercase">Gunner
+                                            <h2 class="text-uppercase character-name">Gunner
                                             </h2>
                                             <a href="#" class="read-more-character" id="ctf-class-learnMore2">Learn
                                                 More</a>
@@ -230,7 +265,7 @@
                                     <div class="col-lg-6">
 
                                         <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h2 style="color: #F2BF50; font-size: 48px;" class="text-uppercase">
+                                            <h2 class="text-uppercase character-name">
                                                 Technomancer</h2>
                                             <a href="#" class="read-more-character" id="ctf-class-learnMore3">Learn
                                                 More</a>
@@ -260,15 +295,15 @@
     <!-- Divider Section -->
     <div class="divider-section"></div>
 
-    <!-- section3 -->
+    <!-- section4 -->
     <section class="py-5 section-bg-3">
-        <div class="container" style="padding-top: 80px;">
+        <div class="container section-padding-top">
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
                     <!-- <p style="color: #CD8033; font-size: 16px;">Class / Character</p> -->
                     <img src="images/trailer-title.png" class="img-fluid mb-4" alt="" id="ctf-trailer-title">
-                    <p style="color: #fff; font-size: 20px;" id="ctf-trailer-description">Kickstart your adventure in a
+                    <p class="description-text" id="ctf-trailer-description">Kickstart your adventure in a
                         classic hack ‘n’ slash Action
                         RPG—featuring randomized dungeons, procedural skills, and an endless endgame.</p>
                 </div>
@@ -337,9 +372,9 @@
     <!-- Divider Section -->
     <div class="divider-section"></div>
 
-    <!-- section4 -->
-    <section style="background: #111827;">
-        <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+    <!-- section5 -->
+    <section class="section-dark-bg">
+        <div class="container section-padding">
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center">
                     <img src="images/main-logo.png" alt="Crystal Fall" class="mb-4 img-fluid">
@@ -372,7 +407,7 @@
     </section>
 
     <footer>
-        <div class="container-fluid text-center py-5" style="background: #0E1421; color: #666;">
+        <div class="container-fluid text-center py-5 footer-bg">
             <img src="images/ci-img.png" class="img-fluid" alt="">
             <p class="pt-3 text-white fs-6 fw-light">&copy; 2024 Crystal Fall. All rights reserved.</p>
         </div>
