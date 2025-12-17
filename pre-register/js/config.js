@@ -40,7 +40,7 @@ const CONFIG = {
             type: 'tel',
             labelKey: 'phone',
             placeholderKey: 'phonePlaceholder',
-            required: true,
+            required: false,
             htmlId: 'phone',
             errorId: 'phoneError',
             defaultValue: '',

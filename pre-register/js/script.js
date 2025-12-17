@@ -95,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description3': 'Enigmatic hybrids of human and crow, wielding steampunk staffs infused with aether.',
             'ctf-trailer-description': 'Kickstart your adventure in a classic hack ‘n’ slash Action RPG—featuring randomized dungeons, procedural skills, and an endless endgame.',
             'ctf-footer-subtitle': "CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY",
-            'register-banner': 'Register'
+            'register-banner': 'Register',
+            'ctf-reward-description': 'Unlock exclusive rewards for the entire server as we reach each milestone.'
         },
         th: {
             'ctf-nav-register': 'ลงทะเบียนล่วงหน้า',
@@ -112,7 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description3': 'คำอธิบายตัวละครและภูมิหลังจะถูกใส่ที่นี่',
             'ctf-trailer-description': 'เริ่มการผจญภัยของคุณในเกมแอ็คชั่น RPG แบบแอ็คชัน—มีดันเจี้ยนสุ่ม ทักษะที่เปลี่ยนแปลงได้ และเนื้อหาสำหรับเล่นได้ไม่สิ้นสุด',
             'ctf-footer-subtitle': 'เกมแอ็คชั่น RPG แบบคลาสสิก<br>ที่มีความหลากหลายของการสร้างตัวละครไม่สิ้นสุด',
-            'register-banner': 'จำนวนผู้ลงทะเบียน'
+            'register-banner': 'จำนวนผู้ลงทะเบียน',
+            'ctf-reward-description': 'Unlock exclusive rewards for the entire server as we reach each milestone.'
         },
         id: {
             'ctf-nav-register': 'Daftar',
@@ -129,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description3': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-trailer-description': 'Mulai petualangan Anda dalam ARPG hack n\' slash klasik—menampilkan dungeon acak, keterampilan prosedural, dan konten endgame yang tak terbatas.',
             'ctf-footer-subtitle': 'ARPG HACK N\' SLASH KLASIK<br>DENGAN KEBEBASAN BUILD TANPA BATAS',
-            'register-banner': 'Register'
+            'register-banner': 'Register',
+            'ctf-reward-description': 'Buka hadiah eksklusif untuk seluruh server saat mencapai setiap milestone.'
         }
     };
 
@@ -170,6 +173,16 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'images/trailer-title.png'
         },
         'ctf-preRegBtn': {
+            en: 'images/pre-regis-btn.png',
+            th: 'images/pre-regis-btn.png',
+            id: 'images/pre-regis-btn.png'
+        },
+        'ctf-reward-title': {
+            en: 'images/reward-title.png',
+            th: 'images/reward-title.png',
+            id: 'images/reward-title.png'
+        },
+        'ctf-reward-preRegModal': {
             en: 'images/pre-regis-btn.png',
             th: 'images/pre-regis-btn.png',
             id: 'images/pre-regis-btn.png'
@@ -223,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Milestone Logic
     const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
-    // Fallback value if API fails
-    const FALLBACK_MILESTONE = 60000;
+    // Manual value if API is disabled or fails
+    const MANUAL_MILESTONE = 10;
 
     function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -271,19 +284,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function fetchMilestone() {
+        if (typeof MILESTONE_API_URL === 'undefined') {
+            console.log('API URL is not defined. Using manual milestone.');
+            updateMilestoneUI(MANUAL_MILESTONE);
+            return;
+        }
+
         fetch(MILESTONE_API_URL)
             .then(response => response.json())
             .then(data => {
                 if (data && data.Result === "Success" && typeof data.MileStone === 'number') {
                     updateMilestoneUI(data.MileStone);
                 } else {
-                    console.warn('Invalid milestone data, using fallback.');
-                    updateMilestoneUI(FALLBACK_MILESTONE);
+                    console.warn('Invalid milestone data, using manual value.');
+                    updateMilestoneUI(MANUAL_MILESTONE);
                 }
             })
             .catch(err => {
                 console.error('Error fetching milestone:', err);
-                updateMilestoneUI(FALLBACK_MILESTONE);
+                updateMilestoneUI(MANUAL_MILESTONE);
             });
     }
 
