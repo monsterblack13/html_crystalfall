@@ -1,43 +1,43 @@
 // ฟังก์ชันหยุดวิดีโอทั้งหมด
-    function stopAllVideos() {
-        // กรณีเป็น <video>
-        document.querySelectorAll('.character-slide video').forEach(v => {
-            v.pause();
-            v.currentTime = 0;
-        });
-
-        // กรณีเป็น YouTube iframe
-        document.querySelectorAll('.character-slide iframe').forEach(iframe => {
-            const src = iframe.src;
-            iframe.src = src; // reload เพื่อหยุด
-        });
-    }
-
-    document.querySelectorAll('.character-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const charIndex = this.getAttribute('data-char');
-
-            // หยุดวิดีโอทุกแท็บก่อน
-            stopAllVideos();
-
-            // ซ่อนทุก slide
-            document.querySelectorAll('.character-slide').forEach(slide => {
-                slide.style.display = 'none';
-            });
-
-            // เอา active ออกจากปุ่มทั้งหมด
-            document.querySelectorAll('.character-btn').forEach(b => b.classList.remove('active'));
-
-            // แสดง slide ที่เลือก
-            document.querySelectorAll('.character-slide')[charIndex].style.display = 'block';
-
-            // active ปุ่ม
-            this.classList.add('active');
-        });
+function stopAllVideos() {
+    // กรณีเป็น <video>
+    document.querySelectorAll('.character-slide video').forEach(v => {
+        v.pause();
+        v.currentTime = 0;
     });
 
-    // เปิดสไลด์แรก
-    document.querySelectorAll('.character-slide')[0].style.display = 'block';
+    // กรณีเป็น YouTube iframe
+    document.querySelectorAll('.character-slide iframe').forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = src; // reload เพื่อหยุด
+    });
+}
+
+document.querySelectorAll('.character-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const charIndex = this.getAttribute('data-char');
+
+        // หยุดวิดีโอทุกแท็บก่อน
+        stopAllVideos();
+
+        // ซ่อนทุก slide
+        document.querySelectorAll('.character-slide').forEach(slide => {
+            slide.style.display = 'none';
+        });
+
+        // เอา active ออกจากปุ่มทั้งหมด
+        document.querySelectorAll('.character-btn').forEach(b => b.classList.remove('active'));
+
+        // แสดง slide ที่เลือก
+        document.querySelectorAll('.character-slide')[charIndex].style.display = 'block';
+
+        // active ปุ่ม
+        this.classList.add('active');
+    });
+});
+
+// เปิดสไลด์แรก
+document.querySelectorAll('.character-slide')[0].style.display = 'block';
 
 // Back to Top Button
 const backToTopBtn = document.getElementById('backToTopBtn');
@@ -61,15 +61,15 @@ backToTopBtn.addEventListener('click', () => {
 
 // Stop video playback when carousel slide changes
 document.addEventListener('DOMContentLoaded', function () {
-  const carousel = document.getElementById('slideCtfCarousel');
+    const carousel = document.getElementById('slideCtfCarousel');
 
-  carousel.addEventListener('slide.bs.carousel', function () {
-    const iframes = carousel.querySelectorAll('iframe');
-    iframes.forEach(iframe => {
-      const src = iframe.src;
-      iframe.src = src; // reset iframe = หยุดวิดีโอ
+    carousel.addEventListener('slide.bs.carousel', function () {
+        const iframes = carousel.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            const src = iframe.src;
+            iframe.src = src; // reset iframe = หยุดวิดีโอ
+        });
     });
-  });
 });
 
 // Language switcher: change text based on `?lang=` parameter (th / en / id)
@@ -130,6 +130,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const imageTranslations = {
+        'ctf-nav-enter-site': {
+            en: 'images/enter-site.png',
+            th: 'images/enter-site.png',
+            id: 'images/enter-site.png'
+        },
+        'ctf-head-preRegModal': {
+            en: 'images/pre-regis-btn.png',
+            th: 'images/pre-regis-btn.png',
+            id: 'images/pre-regis-btn.png'
+        },
+        'ctf-head-streamBtn': {
+            en: 'images/stream-btn.png',
+            th: 'images/stream-btn.png',
+            id: 'images/stream-btn.png'
+        },
+        'ctf-streamBtn': {
+            en: 'images/stream-btn.png',
+            th: 'images/stream-btn.png',
+            id: 'images/stream-btn.png'
+        },
+        'ctf-epicBtn': {
+            en: 'images/epic-btn.png',
+            th: 'images/epic-btn.png',
+            id: 'images/epic-btn.png'
+        },
+        'ctf-class-intro-title': {
+            en: 'images/class-intro-title.png',
+            th: 'images/class-intro-title.png',
+            id: 'images/class-intro-title.png'
+        },
+        'ctf-trailer-title': {
+            en: 'images/trailer-title.png',
+            th: 'images/trailer-title.png',
+            id: 'images/trailer-title.png'
+        },
+        'ctf-preRegBtn': {
+            en: 'images/pre-regis-btn.png',
+            th: 'images/pre-regis-btn.png',
+            id: 'images/pre-regis-btn.png'
+        }
+    };
+
     function applyLanguage(lang) {
         const map = translations[lang] || translations['en'];
         Object.keys(map).forEach(id => {
@@ -143,6 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.setAttribute('title', map[id]);
             } else {
                 el.innerHTML = map[id];
+            }
+        });
+
+        // Switch images based on language
+        Object.keys(imageTranslations).forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.tagName === 'IMG') {
+                const imgMap = imageTranslations[id];
+                const newSrc = imgMap[lang] || imgMap['en'];
+                el.src = newSrc;
             }
         });
 
