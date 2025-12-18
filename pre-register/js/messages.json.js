@@ -12,7 +12,7 @@ const ALL_MESSAGES = {
             submitting: 'กำลังส่งข้อมูล...',
             submitButton: 'ยืนยัน',
             success: 'ลงทะเบียนสำเร็จ!',
-            successDescription: 'ข้อมูลของคุณถูกบันทึกเรียบร้อยแล้ว',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'นี่คือลิงก์สาธิต (Demo Link)'
         },
         labels: {
@@ -22,7 +22,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: 'ชื่อ-นามสกุล',
             fullnamePlaceholder: 'กรอกชื่อของคุณ',
-            acceptTerms: 'ฉันยอมรับข้อกำหนดและเงื่อนไข',
+            acceptTerms: 'ฉันยอมรับ <a href="https://secure2.playpark.com/register/Term-of-Service.aspx" target="_blank" class="policy-link">ข้อกำหนดและเงื่อนไข</a>, <a href="https://secure2.playpark.com/register/Term-of-PDPA.aspx" target="_blank" class="policy-link">นโยบายความเป็นส่วนตัว</a>',
             nickname: 'ชื่อเล่น',
             nicknamePlaceholder: 'กรอกชื่อเล่น',
             age: 'อายุ',
@@ -113,11 +113,11 @@ const ALL_MESSAGES = {
     en: {
         general: {
             pageTitle: 'Registration',
-            pageSubtitle: 'Please fill in your information to register',
+            pageSubtitle: 'Please use the same email address you plan to use in the game to receive all rewards and benefits.',
             submitting: 'Submitting...',
             submitButton: 'Submit',
             success: 'Registration Successful!',
-            successDescription: 'Your information has been saved successfully',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'This is a demo link'
         },
         labels: {
@@ -127,7 +127,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: 'Full Name',
             fullnamePlaceholder: 'Enter your full name',
-            acceptTerms: 'I accept the Terms and Conditions',
+            acceptTerms: 'I accept the <a href="https://secure2.playpark.com/register/Term-of-Service.aspx" target="_blank" class="policy-link">Terms and Conditions</a>, <a href="https://secure2.playpark.com/register/Term-of-PDPA.aspx" target="_blank" class="policy-link">Privacy Policy</a>',
             nickname: 'Nickname',
             nicknamePlaceholder: 'Enter your nickname',
             age: 'Age',
@@ -218,11 +218,11 @@ const ALL_MESSAGES = {
     id: {
         general: {
             pageTitle: 'Registrasi',
-            pageSubtitle: 'Silakan isi informasi Anda untuk mendaftar',
+            pageSubtitle: 'Please use the same email address you plan to use in the game to receive all rewards and benefits.',
             submitting: 'Mengirim...',
             submitButton: 'Kirim',
             success: 'Registrasi Berhasil!',
-            successDescription: 'Informasi Anda telah tersimpan',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'Ini adalah link demo'
         },
         labels: {
@@ -232,7 +232,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: 'Nama Lengkap',
             fullnamePlaceholder: 'Masukkan nama lengkap Anda',
-            acceptTerms: 'Saya menerima Syarat dan Ketentuan',
+            acceptTerms: 'Saya menerima <a href="https://secure2.playpark.com/register/Term-of-Service.aspx" target="_blank" class="policy-link">Syarat dan Ketentuan</a>, <a href="https://secure2.playpark.com/register/Term-of-PDPA.aspx" target="_blank" class="policy-link">Privacy Policy</a>',
             nickname: 'Nama Panggilan',
             nicknamePlaceholder: 'Masukkan nama panggilan',
             age: 'Umur',
@@ -327,7 +327,7 @@ const ALL_MESSAGES = {
             submitting: 'Nagsusumite...',
             submitButton: 'Isumite',
             success: 'Matagumpay ang Pagpaparehistro!',
-            successDescription: 'Ang iyong impormasyon ay nai-save na',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'Ito ay isang demo link'
         },
         labels: {
@@ -337,7 +337,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: 'Buong Pangalan',
             fullnamePlaceholder: 'Ilagay ang iyong buong pangalan',
-            acceptTerms: 'Tinatanggap ko ang mga Tuntunin at Kundisyon',
+            acceptTerms: 'Tinatanggap ko ang mga <a href="#" class="policy-link">Tuntunin at Kundisyon</a>',
             nickname: 'Palayaw',
             nicknamePlaceholder: 'Ilagay ang iyong palayaw',
             age: 'Edad',
@@ -432,7 +432,7 @@ const ALL_MESSAGES = {
             submitting: 'Đang gửi...',
             submitButton: 'Gửi',
             success: 'Đăng ký thành công!',
-            successDescription: 'Thông tin của bạn đã được lưu',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'Đây là liên kết demo'
         },
         labels: {
@@ -442,7 +442,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: 'Họ và tên',
             fullnamePlaceholder: 'Nhập họ và tên của bạn',
-            acceptTerms: 'Tôi chấp nhận Điều khoản và Điều kiện',
+            acceptTerms: 'Tôi chấp nhận <a href="#" class="policy-link">Điều khoản và Điều kiện</a>',
             nickname: 'Biệt danh',
             nicknamePlaceholder: 'Nhập biệt danh của bạn',
             age: 'Tuổi',
@@ -537,7 +537,7 @@ const ALL_MESSAGES = {
             submitting: '提交中...',
             submitButton: '提交',
             success: '注册成功！',
-            successDescription: '您的信息已保存',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: '这是演示链接'
         },
         labels: {
@@ -547,7 +547,7 @@ const ALL_MESSAGES = {
             phonePlaceholder: '0812345678',
             fullname: '全名',
             fullnamePlaceholder: '输入您的全名',
-            acceptTerms: '我接受条款和条件',
+            acceptTerms: '我接受<a href="#" class="policy-link">条款和条件</a>',
             nickname: '昵称',
             nicknamePlaceholder: '输入您的昵称',
             age: '年龄',

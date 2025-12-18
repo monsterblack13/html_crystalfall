@@ -57,6 +57,7 @@
 .hero-subtitle {
     font-size: 1.5rem;
     color: #fff;
+    text-transform: uppercase;
 }
 
 /* Section Backgrounds */
@@ -548,11 +549,52 @@ label {
     font-weight: bold;
 }
 
+span.prereg-required {
+    color: red;
+}
+
+[class*="success-icon"] {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #dfb86e 0%, #704c0a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: white;
+    animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #151318;
+}
+
 /* สำหรับการปรับขนาดตามหน้าจอ */
 @media (max-width: 768px) {
     .banner-content {
         font-size: 16px;
         padding: 0 20px;
+    }
+
+    .bg-character-1 {
+        background: none;
+        min-height: 100%;
+        padding-bottom: 80px;
+    }
+
+    .bg-character-2 {
+        background: none;
+        min-height: 100%;
+        padding-bottom: 80px;
+    }
+
+    .bg-character-3 {
+        background: none;
+        min-height: 100%;
+        padding-bottom: 80px;
     }
 }
 
@@ -614,6 +656,7 @@ label {
 .description-text {
     color: #fff;
     font-size: 20px;
+    font-weight: 300;
 }
 
 .character-name {
@@ -628,4 +671,15 @@ label {
 .footer-bg {
     background: #0E1421;
     color: #666;
+}
+
+/* Policy Link */
+.policy-link {
+    color: #F2BF50;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.policy-link:hover {
+    color: #fff;
 }

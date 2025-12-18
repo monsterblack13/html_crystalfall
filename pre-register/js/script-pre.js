@@ -45,7 +45,7 @@ function generateForm() {
         }
 
         // ดึง label และ placeholder จาก MESSAGES
-        const label = escapeHtml(MESSAGES.labels[field.labelKey] || field.labelKey || 'Field');
+        const label = MESSAGES.labels[field.labelKey] || field.labelKey || 'Field';
         const placeholder = field.placeholderKey ? escapeHtml(MESSAGES.labels[field.placeholderKey] || '') : '';
 
         // สร้าง form-group
@@ -141,7 +141,7 @@ function generateForm() {
         <div id="${prefix}successMessage" class="${prefix}success-message" style="display: none;">
             <div class="${prefix}success-icon">✓</div>
             <h2>${escapeHtml(MESSAGES.general.success)}</h2>
-            <p>${escapeHtml(MESSAGES.general.successDescription)}</p>
+            <p>${MESSAGES.general.successDescription}</p>
         </div>
     `;
 
@@ -447,7 +447,11 @@ document.addEventListener('DOMContentLoaded', async function () {
                 this.value = this.value.replace(/\s/g, '');
 
                 if (this.value === '') {
-                    showError(this, errorElement, MESSAGES.validation.phoneRequired);
+                    if (field.required) {
+                        showError(this, errorElement, MESSAGES.validation.phoneRequired);
+                    } else {
+                        clearError(this, errorElement);
+                    }
                 } else if (!validatePhone(this.value, fieldKey)) {
                     showError(this, errorElement, MESSAGES.validation.phoneInvalid);
                 } else {
@@ -476,13 +480,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
-    // ป้องกัน link จากการคลิก (สำหรับ demo)
+    // Stop propagation for policy links to prevent checkbox toggling
     document.querySelectorAll('.policy-link').forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault();
-            alert(MESSAGES.general.demoLink);
+            e.stopPropagation();
         });
     });
+
+
 
     // จัดการการ submit ฟอร์ม
     form.addEventListener('submit', function (e) {
@@ -502,26 +507,34 @@ document.addEventListener('DOMContentLoaded', async function () {
         Object.keys(CONFIG.fields).forEach((fieldKey, index) => {
             const field = CONFIG.fields[fieldKey];
             const freeTextKey = `FreeText${index + 1}`;
+            let value = '';
 
             if (field.type === 'hidden') {
                 // Hidden field - ใช้ค่าจาก input element (อาจถูกอัปเดตโดย IP Detection)
                 const input = formInputs[fieldKey];
-                paramsData[freeTextKey] = input ? input.value : (field.value || '');
+                value = input ? input.value : (field.value || '');
             } else if (field.type === 'checkbox') {
                 // Checkbox - ใช้ trueValue หรือ falseValue
                 const input = formInputs[fieldKey];
-                paramsData[freeTextKey] = input && input.checked ? field.trueValue : field.falseValue;
+                value = input && input.checked ? field.trueValue : field.falseValue;
             } else if (field.type === 'tel' && field.useInternationalPhone && intlTelInputInstances[fieldKey]) {
                 // Tel field with International Phone - ใช้ international format
                 const iti = intlTelInputInstances[fieldKey];
                 const internationalNumber = iti.getNumber();  // รูปแบบ: +66812345678
-                paramsData[freeTextKey] = internationalNumber || '';
+                value = internationalNumber || '';
                 console.log(`📞 ${fieldKey} (International): ${internationalNumber}`);
             } else {
                 // Input fields อื่นๆ - ใช้ค่าจาก input
                 const input = formInputs[fieldKey];
-                paramsData[freeTextKey] = input ? input.value : '';
+                value = input ? input.value : '';
             }
+
+            // ถ้า field ไม่ใช่ required และค่าว่าง ให้ส่ง '-' แทน
+            if (!field.required && (value === '' || value === null || value === undefined)) {
+                value = '-';
+            }
+
+            paramsData[freeTextKey] = value;
         });
 
         const params = new URLSearchParams(paramsData);
@@ -561,14 +574,39 @@ document.addEventListener('DOMContentLoaded', async function () {
                     // ลงทะเบียนสำเร็จ
                     console.log(MESSAGES.console.success);
                     form.style.display = 'none';
-                    document.getElementById(`${prefix}successMessage`).style.display = 'block';
+                    const successMessage = document.getElementById(`${prefix}successMessage`);
+
+                    // Hide title and subtitle
+                    const title = document.querySelector('#registrationCard h1');
+                    const subtitle = document.querySelector(`.${prefix}subtitle`);
+                    if (title) title.style.display = 'none';
+                    if (subtitle) subtitle.style.display = 'none';
+
+                    successMessage.style.display = 'block';
+
+                    // Create Success Iframe (req: 10x10, close in 5s)
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'success.html';
+                    iframe.style.width = '10px';
+                    iframe.style.height = '10px';
+                    iframe.style.border = 'none';
+
+
+                    successMessage.appendChild(iframe);
+
+                    // Auto close iframe after 5s
+                    setTimeout(() => {
+                        iframe.remove();
+                    }, 5000);
 
                     // Reset ฟอร์มหลัง 3 วินาที
                     setTimeout(() => {
                         form.style.display = 'block';
-                        document.getElementById(`${prefix}successMessage`).style.display = 'none';
+                        if (title) title.style.display = 'block';
+                        if (subtitle) subtitle.style.display = 'block';
+                        successMessage.style.display = 'none';
                         form.reset();
-                    }, 3000);
+                    }, 30000);
 
                 } else if (data.code === 1) {
                     // ไม่พบกิจกรรมหรือกิจกรรมปิดอยู่
