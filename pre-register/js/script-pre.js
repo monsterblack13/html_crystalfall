@@ -135,7 +135,7 @@ function generateForm() {
 
     // เพิ่มปุ่ม submit
     formHTML += `
-            <button type="submit" class="${prefix}submit-btn">${escapeHtml(MESSAGES.general.submitButton)}</button>
+            <button type="submit" id="${prefix}submitBtn" class="${prefix}submit-btn">${escapeHtml(MESSAGES.general.submitButton)}</button>
         </form>
 
         <div id="${prefix}successMessage" class="${prefix}success-message" style="display: none;">
