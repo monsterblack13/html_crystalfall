@@ -153,12 +153,12 @@
 }
 
 .bg-character-2 {
-    background: url(../images/cha-1.png) no-repeat right top -99px;
+    background: url(../images/cha-2.png) no-repeat right top;
     min-height: 680px;
 }
 
 .bg-character-3 {
-    background: url(../images/cha-1.png) no-repeat right top -99px;
+    background: url(../images/cha-3.png) no-repeat right top;
     min-height: 680px;
 }
 
