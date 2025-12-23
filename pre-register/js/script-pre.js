@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     // Create Success Iframe (req: 10x10, close in 5s)
                     const iframe = document.createElement('iframe');
-                    iframe.src = 'success.html';
+                    iframe.src = 'success.html?=preg';
                     iframe.style.width = '10px';
                     iframe.style.height = '10px';
                     iframe.style.border = 'none';
@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     // Auto close iframe after 5s
                     setTimeout(() => {
                         iframe.remove();
-                    }, 5000);
+                    }, 30000);
 
                     // Reset ฟอร์มหลัง 3 วินาที
                     setTimeout(() => {

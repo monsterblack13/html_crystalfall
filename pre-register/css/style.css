@@ -398,6 +398,10 @@ a:hover img {
     width: 100%;
 }
 
+.iti {
+    display: block !important;
+}
+
 #prereg-policy {
     width: auto;
 }
@@ -595,6 +599,15 @@ span.prereg-required {
         background: none;
         min-height: 100%;
         padding-bottom: 80px;
+    }
+
+    .carousel-control-prev.slide-ctf-arrow {
+        left: -50px;
+    }
+
+
+    .carousel-control-next.slide-ctf-arrow {
+        right: -50px;
     }
 }
 

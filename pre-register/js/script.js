@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-nav-rewards': 'Rewards',
             'ctf-nav-introduction': 'Introduction',
             'ctf-nav-trailers': 'Trailers',
-            'ctf-head-text': "CLASSIC HACK 'N' SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY",
+            'ctf-head-text': "CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY",
             'ctf-class-character': 'Class / Character',
             'ctf-class-description': 'Choose your class and survive in a world destroyed by a mysterious asteroid, fighting steampunk enemies in search of epic loot.',
             'ctf-class-learnMore1': 'Learn More',
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'Mutated foxes adept at dealing consistent damage from close or long range with pistols, rifles and shotguns.',
             'ctf-class-description3': 'Enigmatic hybrids of human and crow, wielding steampunk staffs infused with aether.',
             'ctf-trailer-description': 'Kickstart your adventure in a classic hack ‘n’ slash Action RPG—featuring randomized dungeons, procedural skills, and an endless endgame.',
-            'ctf-footer-subtitle': "CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY",
+            'ctf-footer-subtitle': "CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY",
             'register-banner': 'Register',
             'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
             'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-nav-rewards': 'Rewards',
             'ctf-nav-introduction': 'Introduction',
             'ctf-nav-trailers': 'Trailers',
-            'ctf-head-text': 'Hack ‘N’ Slash ARPG สุดคลาสสิก<br>สร้างบิลด์ได้หลากหลายไร้ขีดจำกัด',
+            'ctf-head-text': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'ctf-class-character': 'คลาส / ตัวละคร',
             'ctf-class-description': 'เลือกคลาสที่ชอบ แล้วเอาชีวิตรอดในโลกที่ถูกทำลายโดยอุกกาบาตปริศนา ต่อสู้กับศัตรูแนว steampunk เพื่อออกล่าสมบัติสุดแรร์',
             'ctf-class-learnMore1': 'อ่านเพิ่มเติม',
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'หมาจิ้งจอกกลายพันธุ์ที่ถนัดด้านการสร้างความเสียหายต่อเนื่องทั้งแบบประชิดและระยะไกลด้วยปืนพก, ไรเฟิล, และปืนลูกซอง',
             'ctf-class-description3': 'ลูกผสมระหว่างมนุษย์กับอีกาที่ว่องไว ใช้ไม้เท้าสตีมพังค์ที่บรรจุอีเธอร์เป็นอาวุธ',
             'ctf-trailer-description': 'เริ่มต้นการผจญภัยของคุณในเกม Action RPG สไตล์ hack ‘n’ slash พร้อมดันเจียนสไตล์ roguelike สกิลหลากหลาย และ endgame ที่เล่นได้ไม่มีวันจบ',
-            'ctf-footer-subtitle': 'เกมแอ็คชั่น RPG แบบคลาสสิก<br>ที่มีความหลากหลายของการสร้างตัวละครไม่สิ้นสุด',
+            'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'จำนวนผู้ลงทะเบียน',
             'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
             'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-nav-rewards': 'Rewards',
             'ctf-nav-introduction': 'Introduction',
             'ctf-nav-trailers': 'Trailers',
-            'ctf-head-text': 'ARPG HACK ‘n’ SLASH KLASIK<br>DENGAN KEBEBASAN BUILD TANPA BATAS',
+            'ctf-head-text': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'ctf-class-character': 'Kelas / Karakter',
             'ctf-class-description': 'Pilih kelas Anda dan bertahan hidup di dunia yang hancur oleh asteroid misterius, melawan musuh steampunk untuk mencari loots epik.',
             'ctf-class-learnMore1': 'Tonton trailer',
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description2': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-class-description3': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-trailer-description': 'Mulai petualangan Anda dalam ARPG hack n\' slash klasik—menampilkan dungeon acak, keterampilan prosedural, dan konten endgame yang tak terbatas.',
-            'ctf-footer-subtitle': 'ARPG HACK ‘n’ SLASH KLASIK<br>DENGAN KEBEBASAN BUILD TANPA BATAS',
+            'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'Jumlah pendaftar',
             'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
             'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
@@ -153,12 +153,17 @@ document.addEventListener('DOMContentLoaded', () => {
             th: 'images/pre-regis-btn.png',
             id: 'images/pre-regis-btn.png'
         },
-        'ctf-head-streamBtn': {
+        'ctf-head-steam': {
             en: 'images/stream-btn.png',
             th: 'images/stream-btn.png',
             id: 'images/stream-btn.png'
         },
-        'ctf-streamBtn': {
+        'ctf-rewards-steam': {
+            en: 'images/stream-btn.png',
+            th: 'images/stream-btn.png',
+            id: 'images/stream-btn.png'
+        },
+        'ctf-footer-steam': {
             en: 'images/stream-btn.png',
             th: 'images/stream-btn.png',
             id: 'images/stream-btn.png'
@@ -241,9 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Milestone Logic
-    const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
+    // const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
     // Manual value if API is disabled or fails
-    const MANUAL_MILESTONE = 10;
+    const MANUAL_MILESTONE = 0;
 
     function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -258,13 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Determine reward level (1-5)
         let level = 1;
-        if (count >= 1000000) {
+        if (count >= 300000) {
             level = 5;
-        } else if (count >= 750000) {
+        } else if (count >= 200000) {
             level = 4;
-        } else if (count >= 500000) {
+        } else if (count >= 100000) {
             level = 3;
-        } else if (count >= 250000) {
+        } else if (count > 0) {
             level = 2;
         } else {
             level = 1;

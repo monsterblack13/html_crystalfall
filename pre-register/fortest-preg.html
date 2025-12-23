@@ -11,7 +11,9 @@
     <meta name="keywords"
         content="Crystal Fall, ARPG, Hack and Slash, Pre-register, Game, Action RPG, Online Game, PlayPark">
     <meta name="author" content="PlayPark">
-    <meta name="robots" content="index, follow">
+    <!-- <meta name="robots" content="index, follow"> -->
+    <meta name="robots" content="noindex, nofollow">
+
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -28,9 +30,26 @@
     <!-- pre register -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.css">
 
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9PRL4X9');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body class="body-main">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PRL4X9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -50,16 +69,16 @@
                 </ul>
 
                 <ul class="navbar-nav ms-auto navbar-right-items" id="nav--social">
-                    <li class="nav-item"><a class="nav-link" href="#" title="Discord" id="ctf-nav-social-discord"><img
-                                src="images/discord.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="facebook" id="ctf-nav-social-facebook"><img
-                                src="images/facebook.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="reddit" id="ctf-nav-social-reddit"><img
-                                src="images/reddit.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="X" id="ctf-nav-social-x"><img
-                                src="images/twitter-X.png" class="img-fluid" alt=""></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="youtube" id="ctf-nav-social-youtube"><img
-                                src="images/youtube.png" class="img-fluid" alt=""></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Discord"><img src="images/discord.png"
+                                class="img-fluid" alt="" id="ctf-nav-social-discord"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="facebook"><img src="images/facebook.png"
+                                class="img-fluid" alt="" id="ctf-nav-social-facebook"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="reddit"><img src="images/reddit.png"
+                                class="img-fluid" alt="" id="ctf-nav-social-reddit"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="X"><img src="images/twitter-X.png"
+                                class="img-fluid" alt="" id="ctf-nav-social-x"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="youtube"><img src="images/youtube.png"
+                                class="img-fluid" alt="" id="ctf-nav-social-youtube"></a></li>
                     <li class="nav-item"><a class="nav-link" href="#" role="button">
                             <img src="images/enter-site.png" class="img-fluid" alt="Enter" height="20"
                                 id="ctf-nav-enter-site"></a>
@@ -104,8 +123,7 @@
             id="sec-hero">
             <img src="images/main-logo.png" alt="Crystal Fall" class="mb-4 img-fluid">
             <!-- <h1 class="hero-title mb-2">CLASSIC HACK ‘N’ SLASH ARPG</h1> -->
-            <p class="hero-subtitle mb-4" id="ctf-head-text">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS BUILD DIVERSITY
-            </p>
+            <p class="hero-subtitle mb-4" id="ctf-head-text">CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY</p>
             <div class="mb-4">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img src="images/pre-regis-btn.png"
                         class="img-fluid p-1" alt="Pre-Register" id="ctf-head-preRegModal"></a>
@@ -169,6 +187,7 @@
 
     <!-- section3 -->
     <section class="section-bg-2" id="sec-introduction">
+
         <div class="container section-padding-top">
 
             <div class="row">
@@ -231,6 +250,7 @@
                                             and lion, specializing in melee combat with blades and shields.</p>
 
                                     </div>
+
                                 </div>
                             </div>
 
@@ -301,6 +321,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- Divider Section -->
@@ -321,7 +342,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-9 col-lg-8 mx-auto">
+                <div class="col-10 col-lg-8 mx-auto">
                     <!-- Carousel Slider -->
                     <div id="slideCtfCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
                         <!-- Indicators -->
@@ -334,7 +355,7 @@
 
 
                         <!-- Slides -->
-                        <div class="carousel-inner text-center">
+                        <div class="carousel-inner text-center mb-5">
                             <div class="carousel-item active">
                                 <!-- <img src="images/screen1.jpg" class="d-block mx-auto slide-ctf-img" alt="Slide 1"> -->
                                 <div class="ratio ratio-16x9 custom-video-border">
@@ -360,13 +381,13 @@
 
 
                         <!-- Controls (hidden on mobile) -->
-                        <button class="carousel-control-prev slide-ctf-arrow d-none d-md-block" type="button"
+                        <button class="carousel-control-prev slide-ctf-arrow" type="button"
                             data-bs-target="#slideCtfCarousel" data-bs-slide="prev">
                             <img src="images/arrow-left.png" class="slide-ctf-arrow-img" alt="Prev">
                         </button>
 
 
-                        <button class="carousel-control-next slide-ctf-arrow d-none d-md-block" type="button"
+                        <button class="carousel-control-next slide-ctf-arrow" type="button"
                             data-bs-target="#slideCtfCarousel" data-bs-slide="next">
                             <img src="images/arrow-right.png" class="slide-ctf-arrow-img" alt="Next">
                         </button>
@@ -409,16 +430,16 @@
 
                     <!-- social -->
                     <div class="d-flex justify-content-center gap-3 mt-4">
-                        <a href="#" title="Discord" id="ctf-footer-social-discord"><img src="images/discord.png"
-                                class="img-fluid" alt=""></a>
-                        <a href="#" title="facebook" id="ctf-footer-social-facebook"><img src="images/facebook.png"
-                                class="img-fluid" alt=""></a>
-                        <a href="#" title="reddit" id="ctf-footer-social-reddit"><img src="images/reddit.png"
-                                class="img-fluid" alt=""></a>
-                        <a href="#" title="X" id="ctf-footer-social-x"><img src="images/twitter-X.png" class="img-fluid"
-                                alt=""></a>
-                        <a href="#" title="youtube" id="ctf-footer-social-youtube"><img src="images/youtube.png"
-                                class="img-fluid" alt=""></a>
+                        <a href="#" title="Discord"><img src="images/discord.png" class="img-fluid" alt=""
+                                id="ctf-footer-social-discord"></a>
+                        <a href="#" title="facebook"><img src="images/facebook.png" class="img-fluid" alt=""
+                                id="ctf-footer-social-facebook"></a>
+                        <a href="#" title="reddit"><img src="images/reddit.png" class="img-fluid" alt=""
+                                id="ctf-footer-social-reddit"></a>
+                        <a href="#" title="X"><img src="images/twitter-X.png" class="img-fluid" alt=""
+                                id="ctf-footer-social-x"></a>
+                        <a href="#" title="youtube"><img src="images/youtube.png" class="img-fluid" alt=""
+                                id="ctf-footer-social-youtube"></a>
                     </div>
                 </div>
             </div>
