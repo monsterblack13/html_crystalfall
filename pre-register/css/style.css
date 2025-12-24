@@ -602,6 +602,10 @@ span.prereg-required {
     text-shadow: #ffeb3b80 0px 0px 6px;
 }
 
+.character-slide .text-light {
+    font-size: 20px;
+}
+
 @media (max-width: 1399px) {
     .read-more-character::after {
         content: none;
@@ -646,6 +650,11 @@ span.prereg-required {
     .carousel-control-next.slide-ctf-arrow {
         right: -50px;
     }
+
+    .description-text {
+        font-size: 18px !important;
+    }
+
 }
 
 /* Mobile adjustments */
@@ -706,7 +715,7 @@ span.prereg-required {
 .description-text {
     color: #fff;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 .character-name {
