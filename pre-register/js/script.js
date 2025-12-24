@@ -362,4 +362,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Init milestone fetch
     fetchMilestone();
+
+
+    // Video modal handler
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal) {
+        const videoIframe = document.getElementById('videoIframe');
+        const videoSrc = "https://www.youtube.com/embed/Fahz4Fsyw5Y?autoplay=1&rel=0";
+
+        videoModal.addEventListener('show.bs.modal', function () {
+            // Stop other videos if playing (optional but good UX)
+            stopAllVideos();
+            videoIframe.src = videoSrc;
+        });
+
+        videoModal.addEventListener('hide.bs.modal', function () {
+            videoIframe.src = "";
+        });
+    }
 });

@@ -7,7 +7,7 @@
     <title>Crystal Fall - Pre Register</title>
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Classic Hack ‘N’ Slash ARPG with endless build diversity. Pre-register now for Crystal Fall to claim limited loot and explore a world destroyed by a mysterious asteroid.">
+        content="Crystalfall is an upcoming free online action RPG with customizable skills and an endless endgame, set in a steampunk world.">
     <meta name="keywords"
         content="Crystal Fall, ARPG, Hack and Slash, Pre-register, Game, Action RPG, Online Game, PlayPark">
     <meta name="author" content="PlayPark">
@@ -122,14 +122,14 @@
     <!-- 1 section -->
     <div class="hero-section">
 
-        <!-- <div class="video-bg-wrap">
+        <div class="video-bg-wrap">
             <div class="video-bg">
                 <iframe
-                    src="https://www.youtube.com/embed/egeVZd5qWuQ?autoplay=1&mute=1&controls=0&loop=1&playlist=egeVZd5qWuQ"
+                    src="https://www.youtube.com/embed/rLsLfmNm2pU?autoplay=1&mute=1&controls=0&loop=1&playlist=rLsLfmNm2pU"
                     frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
                 </iframe>
             </div>
-        </div> -->
+        </div>
 
 
         <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white"
@@ -182,7 +182,24 @@
                 <div class="col-12 mx-auto text-center mb-5">
                     <img src="images/reward-1.png" class="img-fluid d-none d-md-block" alt="" id="ctf-reward-pc">
                     <img src="images/reward-1-mb.png" class="img-fluid d-block d-md-none" alt="" id="ctf-reward-mobile">
+
+                    <!-- video reward -->
+                    <!-- <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 mt-5">
+                            <div class="ratio ratio-16x9 mb-4 character-video custom-video-border">
+                                <iframe src="https://www.youtube.com/embed/Lh1rfji4550?controls=0"
+                                    title="Character 1 Video" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> -->
+
                     <div class="my-5">
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="my-5" data-bs-toggle="modal" data-bs-target="#videoModal"><img
+                                    src="images/reward-play.png" class="img-fluid p-1" alt="Play"></a>
+                        </div>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img
                                 src="images/pre-regis-btn.png" class="img-fluid p-1" alt="Pre-Register"
                                 id="ctf-rewards-preRegModal"></a>
@@ -192,6 +209,7 @@
                             pre-registered & wishlist users only.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -486,6 +504,23 @@
                     </button>
                     <div class="registration-card" id="registrationCard">
                         <!-- Form will be generated dynamically by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-2 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="ratio ratio-16x9">
+                        <iframe id="videoIframe" src="" title="YouTube video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
