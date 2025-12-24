@@ -172,6 +172,28 @@
     max-width: 350px;
     text-align: center;
     margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+.read-more-character::after {
+    content: "\f061";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 700px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.read-more-character:hover {
+    padding-right: 40px;
+    transition: all 0.5s ease;
+}
+
+.read-more-character:hover::after {
+    opacity: 1;
+    right: 675px;
 }
 
 /* Screenshots */
@@ -576,6 +598,21 @@ span.prereg-required {
     background-color: #151318;
 }
 
+.nav-link:hover {
+    text-shadow: #ffeb3b80 0px 0px 6px;
+}
+
+@media (max-width: 1399px) {
+    .read-more-character::after {
+        content: none;
+    }
+
+    .read-more-character:hover {
+        padding-right: 20px;
+        transition: all 0.5s ease;
+    }
+}
+
 /* สำหรับการปรับขนาดตามหน้าจอ */
 @media (max-width: 768px) {
     .banner-content {
@@ -668,7 +705,7 @@ span.prereg-required {
 
 .description-text {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
 }
 
@@ -695,4 +732,24 @@ span.prereg-required {
 
 .policy-link:hover {
     color: #fff;
+}
+
+/* Sticky Navbar */
+.navbar.sticky-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    animation: slideDown 0.35s ease-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }

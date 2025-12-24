@@ -14,7 +14,7 @@ const CONFIG = {
     apiUrl: 'https://secure2.playpark.com/PreRegisterAPI/PreRegisterAPI.ashx',
 
     // Event ID ที่ต้องการใช้งาน
-    eventId: '36',
+    eventId: '37',
 
     // IP Detection API (สำหรับตรวจจับประเทศอัตโนมัติ)
     ipDetectionAPI: {
@@ -56,7 +56,8 @@ const CONFIG = {
         // Country Code from freeText2 (International Phone Input)
         freeText3: {
             type: 'hidden',
-            value: ''  // จะถูกอัปเดตโดย script.js อัตโนมัติ
+            value: '',  // จะถูกอัปเดตโดย script.js อัตโนมัติ
+            _linkedTo: 'freeText2'
         },
 
         // freeText4

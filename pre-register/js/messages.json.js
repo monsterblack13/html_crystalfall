@@ -8,11 +8,11 @@ const ALL_MESSAGES = {
     th: {
         general: {
             pageTitle: 'ลงทะเบียน',
-            pageSubtitle: 'กรุณากรอกข้อมูลของคุณเพื่อลงทะเบียน',
+            pageSubtitle: 'โปรดใช้อีเมลล์เดียวกับอีเมลล์ที่คุณจะใช้ในเกมเพื่อรับรางวัลและสิทธิพิเศษทั้งหมด',
             submitting: 'กำลังส่งข้อมูล...',
             submitButton: 'ยืนยัน',
             success: 'ลงทะเบียนสำเร็จ!',
-            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
+            successDescription: 'เพิ่ม Crystalfall ลงใน Steam Wishlist เพื่อให้สามารถรับรางวัลการลงทะเบียนล่วงหน้าได้<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'นี่คือลิงก์สาธิต (Demo Link)'
         },
         labels: {
@@ -80,7 +80,7 @@ const ALL_MESSAGES = {
         },
         validation: {
             phoneRequired: 'กรุณากรอกเบอร์มือถือ',
-            phoneInvalid: 'เบอร์มือถือต้องเป็นตัวเลข 10 หลัก'
+            phoneInvalid: 'กรอกเบอร์มือถือให้ถูกต้อง'
         },
         console: {
             sendingData: '=== กำลังส่งข้อมูลไปยัง API (GET) ===',
@@ -185,7 +185,7 @@ const ALL_MESSAGES = {
         },
         validation: {
             phoneRequired: 'Please enter phone number',
-            phoneInvalid: 'Phone number must be 10 digits'
+            phoneInvalid: 'Please enter a valid mobile phone number.'
         },
         console: {
             sendingData: '=== Sending data to API (GET) ===',
@@ -218,11 +218,11 @@ const ALL_MESSAGES = {
     id: {
         general: {
             pageTitle: 'Registrasi',
-            pageSubtitle: 'Please use the same email address you plan to use in the game to receive all rewards and benefits.',
+            pageSubtitle: 'Gunakan alamat email yang sama dengan yang akan kamu pakai di dalam game agar semua hadiah dan benefit bisa diterima.',
             submitting: 'Mengirim...',
             submitButton: 'Kirim',
             success: 'Registrasi Berhasil!',
-            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
+            successDescription: 'Tambahkan Crystalfall ke Steam Wishlist kamu untuk mendapatkan hadiah pre-registrasi.<br><a href="#" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'Ini adalah link demo'
         },
         labels: {
@@ -290,7 +290,7 @@ const ALL_MESSAGES = {
         },
         validation: {
             phoneRequired: 'Silakan masukkan nomor telepon',
-            phoneInvalid: 'Nomor telepon harus 10 digit'
+            phoneInvalid: 'Silakan masukkan nomor ponsel yang benar.'
         },
         console: {
             sendingData: '=== Mengirim data ke API (GET) ===',

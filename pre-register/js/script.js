@@ -43,11 +43,34 @@ document.querySelectorAll('.character-slide')[0].style.display = 'block';
 const backToTopBtn = document.getElementById('backToTopBtn');
 
 // Show/hide button based on scroll position
+// Navbar element
+const navbar = document.querySelector('.navbar');
+
+// Show/hide button based on scroll position & Sticky Navbar
 window.addEventListener('scroll', () => {
+    // Back to Top Logic
     if (window.pageYOffset > 300) {
         backToTopBtn.classList.add('show');
     } else {
         backToTopBtn.classList.remove('show');
+    }
+
+    // Sticky Navbar Logic (Works only on PC screen >= 992px)
+    const scrollThreshold = document.documentElement.scrollHeight * 0.20;
+
+    // Check if screen width is >= 992px (Desktop)
+    if (window.innerWidth >= 992 && window.scrollY > scrollThreshold) {
+        if (!navbar.classList.contains('sticky-menu')) {
+            // Prevent layout jump by adding padding to body equal to navbar height
+            document.body.style.paddingTop = navbar.offsetHeight + 'px';
+            navbar.classList.add('sticky-menu');
+        }
+    } else {
+        if (navbar.classList.contains('sticky-menu')) {
+            // Reset padding
+            document.body.style.paddingTop = '0';
+            navbar.classList.remove('sticky-menu');
+        }
     }
 });
 
@@ -117,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-trailer-description': 'เริ่มต้นการผจญภัยของคุณในเกม Action RPG สไตล์ hack ‘n’ slash พร้อมดันเจียนสไตล์ roguelike สกิลหลากหลาย และ endgame ที่เล่นได้ไม่มีวันจบ',
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'จำนวนผู้ลงทะเบียน',
-            'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
-            'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
+            'ctf-reward-description': 'รางวัลจะปลดล็อคตามจำนวนของผู้เล่นที่ดำเนินการเรียบร้อยทั้งการลงทะเบียนล่วงหน้าและกด wishlist เกมใน Steam',
+            'ctf-rewards-notice': 'รางวัลจะให้แก่ผู้เล่นที่ลงทะเบียนล่วงหน้าและกด wishlist เท่านั้น'
         },
         id: {
             'ctf-nav-register': 'Register',
@@ -137,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-trailer-description': 'Mulai petualangan Anda dalam ARPG hack n\' slash klasik—menampilkan dungeon acak, keterampilan prosedural, dan konten endgame yang tak terbatas.',
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'Jumlah pendaftar',
-            'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
-            'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
+            'ctf-reward-description': 'Hadiah akan terbuka sesuai dengan jumlah total pemain yang sudah melakukan pre-registrasi dan menambahkan game ke Steam Wishlist.',
+            'ctf-rewards-notice': 'Hadiah hanya tersedia untuk pemain yang sudah pre-registrasi dan wishlist..'
         }
     };
 
@@ -150,8 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         'ctf-head-preRegModal': {
             en: 'images/pre-regis-btn.png',
-            th: 'images/pre-regis-btn.png',
-            id: 'images/pre-regis-btn.png'
+            th: 'images/pre-regis-btn-th.png',
+            id: 'images/pre-regis-btn-id.png'
+        },
+        'ctf-rewards-preRegModal': {
+            en: 'images/pre-regis-btn.png',
+            th: 'images/pre-regis-btn-th.png',
+            id: 'images/pre-regis-btn-id.png'
+        },
+        'ctf-footer-preRegModal': {
+            en: 'images/pre-regis-btn.png',
+            th: 'images/pre-regis-btn-th.png',
+            id: 'images/pre-regis-btn-id.png'
         },
         'ctf-head-steam': {
             en: 'images/stream-btn.png',
@@ -176,27 +209,37 @@ document.addEventListener('DOMContentLoaded', () => {
         'ctf-class-intro-title': {
             en: 'images/class-intro-title.png',
             th: 'images/class-intro-title.png',
-            id: 'images/class-intro-title.png'
+            id: 'images/class-intro-title-id.png'
         },
         'ctf-trailer-title': {
             en: 'images/trailer-title.png',
             th: 'images/trailer-title.png',
-            id: 'images/trailer-title.png'
+            id: 'images/trailer-title-id.png'
         },
         'ctf-preRegBtn': {
             en: 'images/pre-regis-btn.png',
-            th: 'images/pre-regis-btn.png',
-            id: 'images/pre-regis-btn.png'
+            th: 'images/pre-regis-btn-th.png',
+            id: 'images/pre-regis-btn-id.png'
         },
         'ctf-reward-title': {
             en: 'images/reward-title.png',
-            th: 'images/reward-title.png',
-            id: 'images/reward-title.png'
+            th: 'images/reward-title-th.png',
+            id: 'images/reward-title-id.png'
         },
         'ctf-reward-preRegModal': {
             en: 'images/pre-regis-btn.png',
-            th: 'images/pre-regis-btn.png',
-            id: 'images/pre-regis-btn.png'
+            th: 'images/pre-regis-btn-th.png',
+            id: 'images/pre-regis-btn-id.png'
+        },
+        'ctf-head-text-img': {
+            en: 'images/main-title-en.png',
+            th: 'images/main-title-th.png',
+            id: 'images/main-title-id.png'
+        },
+        'ctf-footer-text-img': {
+            en: 'images/main-title-en.png',
+            th: 'images/main-title-th.png',
+            id: 'images/main-title-id.png'
         }
     };
 
