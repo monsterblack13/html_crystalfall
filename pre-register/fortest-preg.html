@@ -198,7 +198,8 @@
                     <div class="my-5">
                         <div class="d-flex justify-content-center">
                             <a href="#" class="mb-5" data-bs-toggle="modal" data-bs-target="#videoModal"><img
-                                    src="images/reward-play.png" class="img-fluid p-1" alt="Play"></a>
+                                    src="images/reward-play.png" class="img-fluid p-1" alt="Play"
+                                    id="ctf-rewards-play"></a>
                         </div>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img
                                 src="images/pre-regis-btn.png" class="img-fluid p-1" alt="Pre-Register"
@@ -437,7 +438,7 @@
     <div class="divider-section"></div>
 
     <!-- section5 -->
-    <section class="section-dark-bg">
+    <section class="section-dark-bg" id="sec-footer">
         <div class="container section-padding">
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center">
@@ -564,6 +565,55 @@
             });
         });
     </script>
+
+    <!-- section acccess check -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const sections = [
+                'sec-hero',
+                'sec-reward',
+                'sec-introduction',
+                'sec-trailers',
+                'sec-footer'
+            ];
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+
+                    const id = entry.target.id;
+                    const storageKey = 'scroll_rate_' + id;
+
+                    // ยิงแค่ 1 ครั้งต่อ user ต่อ section
+                    if (sessionStorage.getItem(storageKey)) return;
+
+                    sessionStorage.setItem(storageKey, '1');
+
+                    // push เข้า GTM
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'crystalfall_scroll_rate',
+                        Section_ID: id
+                    });
+
+                    console.log('dataLayer push:', id);
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+
+        });
+    </script>
+
+
+
 
 </body>
 
