@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoModal = document.getElementById('videoModal');
     if (videoModal) {
         const videoIframe = document.getElementById('videoIframe');
-        const videoSrc = "https://www.youtube.com/embed/Fahz4Fsyw5Y?autoplay=1&rel=0";
+        const videoSrc = "https://www.youtube.com/embed/hvZTsgzUsPc?autoplay=1&rel=0";
 
         videoModal.addEventListener('show.bs.modal', function () {
             // Stop other videos if playing (optional but good UX)
