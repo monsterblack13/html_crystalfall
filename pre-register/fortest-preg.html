@@ -242,6 +242,9 @@
                 <div class="d-flex flex-column gap-3">
                     <button class="btn p-0 character-btn active" data-char="0">
                         <img src="images/character1.png" alt="" class="img-fluid">
+                        <!-- <video class="char-video" muted loop playsinline>
+                            <source src="images/character1.mp4" type="video/mp4">
+                        </video> -->
                     </button>
                     <button class="btn p-0 character-btn" data-char="1">
                         <img src="images/character2.png" alt="" class="img-fluid">
@@ -611,6 +614,24 @@
 
         });
     </script>
+
+
+    <!-- video btn -->
+    <!-- <script>
+        document.querySelectorAll('.character-btn').forEach(btn => {
+            const video = btn.querySelector('video');
+
+            btn.addEventListener('mouseenter', () => {
+                video.currentTime = 0;
+                video.play();
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                video.pause();
+            });
+        });
+    </script> -->
+
 
 
 

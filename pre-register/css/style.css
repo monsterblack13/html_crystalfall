@@ -789,3 +789,37 @@ span.prereg-required {
         transform: translateY(0);
     }
 }
+
+
+/* video btn */
+
+/* .character-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.character-btn img,
+.character-btn video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.character-btn .char-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+
+.character-btn:hover .char-img {
+    opacity: 0;
+}
+
+.character-btn:hover .char-video {
+    opacity: 1;
+} */
