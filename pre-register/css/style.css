@@ -33,7 +33,8 @@
     height: 100vh;
     overflow: hidden;
     z-index: 1;
-    background: url(../images/bg-sec1.jpg);
+    /* background: url(../images/bg-sec1.jpg); */
+    background: url(../images/bg-sec1.webp);
     background-size: cover;
     background-position: center;
 }
@@ -148,17 +149,20 @@
 }
 
 .bg-character-1 {
-    background: url(../images/cha-1.png) no-repeat right top -99px;
+    /* background: url(../images/cha-1.png) no-repeat right top -99px; */
+    background: url(../images/cha-1.webp) no-repeat right top -99px;
     min-height: 680px;
 }
 
 .bg-character-2 {
-    background: url(../images/cha-2.png) no-repeat right top;
+    /* background: url(../images/cha-2.png) no-repeat right top; */
+    background: url(../images/cha-2.webp) no-repeat right top;
     min-height: 680px;
 }
 
 .bg-character-3 {
-    background: url(../images/cha-3.png) no-repeat right top;
+    /* background: url(../images/cha-3.png) no-repeat right top; */
+    background: url(../images/cha-3.webp) no-repeat right top;
     min-height: 680px;
 }
 
