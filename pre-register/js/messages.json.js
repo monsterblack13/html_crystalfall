@@ -18,7 +18,7 @@ const ALL_MESSAGES = {
         labels: {
             email: 'อีเมล',
             emailPlaceholder: 'example@email.com',
-            phone: 'เบอร์มือถือ',
+            phone: 'เบอร์มือถือ (Optional)',
             phonePlaceholder: '0812345678',
             fullname: 'ชื่อ-นามสกุล',
             fullnamePlaceholder: 'กรอกชื่อของคุณ',
@@ -123,7 +123,7 @@ const ALL_MESSAGES = {
         labels: {
             email: 'Email',
             emailPlaceholder: 'example@email.com',
-            phone: 'Phone Number',
+            phone: 'Phone Number (Optional)',
             phonePlaceholder: '0812345678',
             fullname: 'Full Name',
             fullnamePlaceholder: 'Enter your full name',
@@ -228,7 +228,7 @@ const ALL_MESSAGES = {
         labels: {
             email: 'Email',
             emailPlaceholder: 'example@email.com',
-            phone: 'Nomor Telepon',
+            phone: 'Nomor Telepon (Optional)',
             phonePlaceholder: '0812345678',
             fullname: 'Nama Lengkap',
             fullnamePlaceholder: 'Masukkan nama lengkap Anda',

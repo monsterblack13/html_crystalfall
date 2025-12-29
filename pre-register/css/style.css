@@ -606,6 +606,22 @@ span.prereg-required {
     font-size: 20px;
 }
 
+.footer-text-contact {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.footer-text-contact a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-text-contact a:hover {
+    color: #d4a855;
+}
+
 @media (max-width: 1399px) {
     .read-more-character::after {
         content: none;

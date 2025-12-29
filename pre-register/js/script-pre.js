@@ -297,8 +297,8 @@ function initializeInternationalPhone(formInputs) {
             const options = field.intlPhoneOptions || {};
             const defaultOptions = {
                 initialCountry: options.initialCountry || 'th',
-                // ใช้ onlyCountries แทน preferredCountries เพื่อแสดงเฉพาะประเทศที่กำหนด
-                onlyCountries: options.preferredCountries || ['th', 'sg', 'my', 'id', 'ph', 'vn'],
+                // ใช้ preferredCountries เพื่อแสดงประเทศที่กำหนดไว้ข้างบน แต่ยังเลือกประเทศอื่นได้ทั้งหมด
+                preferredCountries: options.preferredCountries || ['th', 'sg', 'my', 'id', 'ph', 'vn'],
                 separateDialCode: options.separateDialCode !== undefined ? options.separateDialCode : false,
                 autoPlaceholder: 'aggressive',
                 nationalMode: false,  // แสดงรหัสประเทศใน input

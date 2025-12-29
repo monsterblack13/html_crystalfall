@@ -11,6 +11,7 @@
     <meta name="keywords"
         content="Crystal Fall, ARPG, Hack and Slash, Pre-register, Game, Action RPG, Online Game, PlayPark">
     <meta name="author" content="PlayPark">
+    <link rel="icon" href="images/favicon.ico">
     <!-- <meta name="robots" content="index, follow"> -->
     <meta name="robots" content="noindex, nofollow">
 
@@ -73,17 +74,24 @@
                 </ul>
 
                 <ul class="navbar-nav ms-auto navbar-right-items" id="nav--social">
-                    <li class="nav-item"><a class="nav-link" href="#" title="Discord"><img src="images/discord.png"
-                                class="img-fluid" alt="" id="ctf-nav-social-discord"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="facebook"><img src="images/facebook.png"
-                                class="img-fluid" alt="" id="ctf-nav-social-facebook"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="reddit"><img src="images/reddit.png"
-                                class="img-fluid" alt="" id="ctf-nav-social-reddit"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="X"><img src="images/twitter-X.png"
-                                class="img-fluid" alt="" id="ctf-nav-social-x"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" title="youtube"><img src="images/youtube.png"
-                                class="img-fluid" alt="" id="ctf-nav-social-youtube"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" role="button">
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            title="Discord" id="ctf-nav-link-discord"><img src="images/discord.png" class="img-fluid"
+                                alt="" id="ctf-nav-social-discord"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            title="facebook" id="ctf-nav-link-facebook"><img src="images/facebook.png" class="img-fluid"
+                                alt="" id="ctf-nav-social-facebook"></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            title="reddit" id="ctf-nav-link-reddit"><img src="images/reddit.png" class="img-fluid"
+                                alt="" id="ctf-nav-social-reddit"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            title="X" id="ctf-nav-link-x"><img src="images/twitter-X.png" class="img-fluid" alt=""
+                                id="ctf-nav-social-x"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            title="youtube" id="ctf-nav-link-youtube"><img src="images/youtube.png" class="img-fluid"
+                                alt="" id="ctf-nav-social-youtube"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer"
+                            role="button" id="ctf-nav-link-enter-site">
                             <img src="images/enter-site.png" class="img-fluid" alt="Enter" height="20"
                                 id="ctf-nav-enter-site"></a>
                     </li>
@@ -141,7 +149,8 @@
             <div class="mb-4">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img src="images/pre-regis-btn.png"
                         class="img-fluid p-1" alt="Pre-Register" id="ctf-head-preRegModal"></a>
-                <a href="#"><img src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-head-steam"></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" id="ctf-head-steam-link"><img
+                        src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-head-steam"></a>
             </div>
             <!-- <div>
                 <a href="#">
@@ -204,10 +213,11 @@
                         <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img
                                 src="images/pre-regis-btn.png" class="img-fluid p-1" alt="Pre-Register"
                                 id="ctf-rewards-preRegModal"></a>
-                        <a href="#"><img src="images/steam.png" class="img-fluid p-1" alt="Steam"
-                                id="ctf-rewards-steam"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" id="ctf-rewards-steam-link"><img
+                                src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-rewards-steam"></a>
                         <p class="description-text" id="ctf-rewards-notice">Rewards are available for
-                            pre-registered & wishlist users only.</p>
+                            pre-registered & wishlist users only. Users who already wishlisted Crystalfall on Steam only
+                            need to pre-register.</p>
                     </div>
                 </div>
 
@@ -271,7 +281,8 @@
                                             class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-2">
                                             <h2 class="text-uppercase character-name">knight
                                             </h2>
-                                            <a href="#" class="read-more-character" id="ctf-class-learnMore1">Learn
+                                            <a href="https://crystalfall.com/#classes" target="_blank"
+                                                class="read-more-character" id="ctf-class-learnMore1">Learn
                                                 More</a>
                                         </div>
 
@@ -304,7 +315,8 @@
                                             class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-2">
                                             <h2 class="text-uppercase character-name">Gunner
                                             </h2>
-                                            <a href="#" class="read-more-character" id="ctf-class-learnMore2">Learn
+                                            <a href="https://crystalfall.com/#classes" target="_blank"
+                                                class="read-more-character" id="ctf-class-learnMore2">Learn
                                                 More</a>
                                         </div>
 
@@ -334,7 +346,8 @@
                                             class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-2">
                                             <h2 class="text-uppercase character-name">
                                                 Technomancer</h2>
-                                            <a href="#" class="read-more-character" id="ctf-class-learnMore3">Learn
+                                            <a href="https://crystalfall.com/#classes" target="_blank"
+                                                class="read-more-character" id="ctf-class-learnMore3">Learn
                                                 More</a>
                                         </div>
 
@@ -454,8 +467,8 @@
                         <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img
                                 src="images/pre-regis-btn.png" class="img-fluid p-1" alt="Pre-Register"
                                 id="ctf-footer-preRegModal"></a>
-                        <a href="#"><img src="images/steam.png" class="img-fluid p-1" alt="Steam"
-                                id="ctf-footer-steam"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" id="ctf-footer-steam-link"><img
+                                src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-footer-steam"></a>
                     </div>
 
                     <!-- <a href="#">
@@ -467,17 +480,23 @@
 
                     <!-- social -->
                     <div class="d-flex justify-content-center gap-3 mt-4">
-                        <a href="#" title="Discord"><img src="images/discord.png" class="img-fluid" alt=""
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="Discord"
+                            id="ctf-footer-link-discord"><img src="images/discord.png" class="img-fluid" alt=""
                                 id="ctf-footer-social-discord"></a>
-                        <a href="#" title="facebook"><img src="images/facebook.png" class="img-fluid" alt=""
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="facebook"
+                            id="ctf-footer-link-facebook"><img src="images/facebook.png" class="img-fluid" alt=""
                                 id="ctf-footer-social-facebook"></a>
-                        <a href="#" title="reddit"><img src="images/reddit.png" class="img-fluid" alt=""
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="reddit"
+                            id="ctf-footer-link-reddit"><img src="images/reddit.png" class="img-fluid" alt=""
                                 id="ctf-footer-social-reddit"></a>
-                        <a href="#" title="X"><img src="images/twitter-X.png" class="img-fluid" alt=""
-                                id="ctf-footer-social-x"></a>
-                        <a href="#" title="youtube"><img src="images/youtube.png" class="img-fluid" alt=""
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="X" id="ctf-footer-link-x"><img
+                                src="images/twitter-X.png" class="img-fluid" alt="" id="ctf-footer-social-x"></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="youtube"
+                            id="ctf-footer-link-youtube"><img src="images/youtube.png" class="img-fluid" alt=""
                                 id="ctf-footer-social-youtube"></a>
                     </div>
+                    <p class="footer-text-contact" id="ctf-footer-contact">If you encounter any issues with
+                        pre-registration, please contact us <a href="#">here</a>.</p>
                 </div>
             </div>
     </section>
@@ -485,7 +504,7 @@
     <footer>
         <div class="container-fluid text-center py-5 footer-bg">
             <img src="images/ci-img.png" class="img-fluid" alt="">
-            <p class="pt-3 text-white fs-6 fw-light">&copy; 2024 Crystal Fall. All rights reserved.</p>
+            <p class="pt-3 text-white fs-6 fw-light">&copy;2025 All Rights Reserved.</p>
         </div>
     </footer>
 

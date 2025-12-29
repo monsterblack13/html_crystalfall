@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-subtitle': "CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY",
             'register-banner': 'Register',
             'ctf-reward-description': 'Rewards are unlocked based on the total number of users who complete both pre-registration and add the game to their Steam Wishlist',
-            'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only.'
+            'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist users only<br>Users who already wishlisted Crystalfall on Steam only need to pre-register.',
+            'ctf-footer-contact': 'If you encounter any issues with pre-registration, please contact us <a href="#">here</a>.'
         },
         th: {
             'ctf-nav-register': 'Register',
@@ -141,7 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'จำนวนผู้ลงทะเบียน',
             'ctf-reward-description': 'รางวัลจะปลดล็อคตามจำนวนของผู้เล่นที่ดำเนินการเรียบร้อยทั้งการลงทะเบียนล่วงหน้าและกด wishlist เกมใน Steam',
-            'ctf-rewards-notice': 'รางวัลจะให้แก่ผู้เล่นที่ลงทะเบียนล่วงหน้าและกด wishlist เท่านั้น'
+            'ctf-rewards-notice': 'รางวัลจะให้แก่ผู้เล่นที่ลงทะเบียนล่วงหน้าและกด wishlist เท่านั้น<br>Users who already wishlisted Crystalfall on Steam only need to pre-register.',
+            'ctf-footer-contact': 'If you encounter any issues with pre-registration, please contact us <a href="#">here</a>.'
         },
         id: {
             'ctf-nav-register': 'Register',
@@ -161,7 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'Jumlah pendaftar',
             'ctf-reward-description': 'Hadiah akan terbuka sesuai dengan jumlah total pemain yang sudah melakukan pre-registrasi dan menambahkan game ke Steam Wishlist.',
-            'ctf-rewards-notice': 'Hadiah hanya tersedia untuk pemain yang sudah pre-registrasi dan wishlist..'
+            'ctf-rewards-notice': 'Hadiah hanya tersedia untuk pemain yang sudah pre-registrasi dan wishlist..<br>Users who already wishlisted Crystalfall on Steam only need to pre-register.',
+            'ctf-footer-contact': 'If you encounter any issues with pre-registration, please contact us <a href="#">here</a>.'
         }
     };
 
@@ -243,6 +246,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const linkTranslations = {
+        'ctf-nav-link-discord': {
+            en: 'https://discord.com/invite/UKj53gGr9Y',
+            th: 'https://discord.com/invite/UKj53gGr9Y',
+            id: 'https://discord.com/invite/UKj53gGr9Y'
+        },
+        'ctf-nav-link-facebook': {
+            en: 'https://www.facebook.com/PlayCrystalfall',
+            th: 'https://www.facebook.com/CrystalfallTH',
+            id: 'https://www.facebook.com/Crystalfall.ID'
+        },
+        'ctf-nav-link-reddit': {
+            en: 'https://www.reddit.com/r/Crystalfall/',
+            th: 'https://www.reddit.com/r/Crystalfall/',
+            id: 'https://www.reddit.com/r/Crystalfall/'
+        },
+        'ctf-nav-link-x': {
+            en: 'https://x.com/playcrystalfall',
+            th: 'https://x.com/playcrystalfall',
+            id: 'https://x.com/playcrystalfall'
+        },
+        'ctf-nav-link-youtube': {
+            en: 'https://www.youtube.com/@playcrystalfall',
+            th: 'https://www.youtube.com/@playcrystalfall',
+            id: 'https://www.youtube.com/@playcrystalfall'
+        },
+        'ctf-nav-link-enter-site': {
+            en: 'https://crystalfall.com/',
+            th: 'https://crystalfall.com/',
+            id: 'https://crystalfall.com/'
+        },
+        'ctf-footer-link-discord': {
+            en: 'https://discord.com/invite/UKj53gGr9Y',
+            th: 'https://discord.com/invite/UKj53gGr9Y',
+            id: 'https://discord.com/invite/UKj53gGr9Y'
+        },
+        'ctf-footer-link-facebook': {
+            en: 'https://www.facebook.com/PlayCrystalfall',
+            th: 'https://www.facebook.com/CrystalfallTH',
+            id: 'https://www.facebook.com/Crystalfall.ID'
+        },
+        'ctf-footer-link-reddit': {
+            en: 'https://www.reddit.com/r/Crystalfall/',
+            th: 'https://www.reddit.com/r/Crystalfall/',
+            id: 'https://www.reddit.com/r/Crystalfall/'
+        },
+        'ctf-footer-link-x': {
+            en: 'https://x.com/playcrystalfall',
+            th: 'https://x.com/playcrystalfall',
+            id: 'https://x.com/playcrystalfall'
+        },
+        'ctf-footer-link-youtube': {
+            en: 'https://www.youtube.com/@playcrystalfall',
+            th: 'https://www.youtube.com/@playcrystalfall',
+            id: 'https://www.youtube.com/@playcrystalfall'
+        },
+        'ctf-head-steam-link': {
+            en: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_EN',
+            th: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_TH',
+            id: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_ID'
+        },
+        'ctf-rewards-steam-link': {
+            en: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_EN',
+            th: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_TH',
+            id: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_ID'
+        },
+        'ctf-footer-steam-link': {
+            en: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_EN',
+            th: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_TH',
+            id: 'https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_ID'
+        }
+    };
+
     function applyLanguage(lang) {
         const map = translations[lang] || translations['en'];
         Object.keys(map).forEach(id => {
@@ -269,6 +345,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Switch links based on language
+        Object.keys(linkTranslations).forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.tagName === 'A') {
+                const linkMap = linkTranslations[id];
+                const newHref = linkMap[lang] || linkMap['en'];
+                el.href = newHref;
+            }
+        });
+
         // Update dropdown label and mark active
         const languageDropdown = document.getElementById('languageDropdown');
         const labels = { th: 'ไทย', en: 'English', id: 'Bahasa' };
@@ -291,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Milestone Logic
     // const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
     // Manual value if API is disabled or fails
-    const MANUAL_MILESTONE = 0;
+    const MANUAL_MILESTONE = 50000;
 
     function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
