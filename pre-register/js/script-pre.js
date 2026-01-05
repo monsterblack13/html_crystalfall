@@ -689,5 +689,51 @@ document.addEventListener('DOMContentLoaded', async function () {
                 submitBtn.textContent = MESSAGES.general.submitButton;
             });
     });
+
+    // ======================================
+    // Modal Reset Logic
+    // ======================================
+    const preRegModal = document.getElementById('preRegModal');
+    if (preRegModal) {
+        preRegModal.addEventListener('hidden.bs.modal', function () {
+            // 1. Reset Form (Clears user input)
+            form.reset();
+
+            // 2. Re-apply Auto-fill data (Restores IP-detected values)
+            if (typeof ipData !== 'undefined' && ipData) {
+                autoFillFromIPData(ipData, formInputs);
+            }
+
+            // 3. Clear Error Messages & Classes
+            Object.keys(CONFIG.fields).forEach(fieldKey => {
+                const input = formInputs[fieldKey];
+                const errorElement = formErrors[fieldKey];
+
+                if (input) input.classList.remove('error');
+                if (errorElement) errorElement.textContent = '';
+            });
+
+            // 4. Reset UI States (Show Form, Hide Success)
+            form.style.display = 'block';
+            const title = document.querySelector('#registrationCard h1');
+            const subtitle = document.querySelector(`.${prefix}subtitle`);
+            if (title) title.style.display = 'block';
+            if (subtitle) subtitle.style.display = 'block';
+
+            const successMessage = document.getElementById(`${prefix}successMessage`);
+            if (successMessage) {
+                successMessage.style.display = 'none';
+                const iframe = successMessage.querySelector('iframe');
+                if (iframe) iframe.remove();
+            }
+
+            // 5. Reset Submit Button
+            const submitBtn = form.querySelector(`.${prefix}submit-btn`);
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = MESSAGES.general.submitButton;
+            }
+        });
+    }
 });
 

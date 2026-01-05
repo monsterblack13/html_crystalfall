@@ -128,7 +128,7 @@
     <div class="divider-section"></div>
 
     <!-- 1 section -->
-    <div class="hero-section">
+    <div class="hero-section" id="sec-hero-rate">
 
         <div class="video-bg-wrap">
             <div class="video-bg">
@@ -172,7 +172,7 @@
 
     <!-- section2 -->
     <section class="section-bg-reward" id="sec-reward">
-        <div class="container section-padding-top">
+        <div class="container section-padding-top" id="sec-reward-rate">
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
@@ -231,7 +231,7 @@
     <!-- section3 -->
     <section class="section-bg-2" id="sec-introduction">
 
-        <div class="container section-padding-top">
+        <div class="container section-padding-top" id="sec-introduction-rate">
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
@@ -251,16 +251,16 @@
             <div class="char-fl-btn">
                 <div class="d-flex flex-column gap-3">
                     <button class="btn p-0 character-btn active" data-char="0">
-                        <img src="images/character1.png" alt="" class="img-fluid">
+                        <img src="images/character1.png" alt="" class="img-fluid" id="char-knight">
                         <!-- <video class="char-video" muted loop playsinline>
                             <source src="images/character1.mp4" type="video/mp4">
                         </video> -->
                     </button>
                     <button class="btn p-0 character-btn" data-char="1">
-                        <img src="images/character2.png" alt="" class="img-fluid">
+                        <img src="images/character2.png" alt="" class="img-fluid" id="char-gunner">
                     </button>
                     <button class="btn p-0 character-btn" data-char="2">
-                        <img src="images/character3.png" alt="" class="img-fluid">
+                        <img src="images/character3.png" alt="" class="img-fluid" id="char-techo">
                     </button>
                 </div>
             </div>
@@ -378,7 +378,7 @@
 
     <!-- section4 -->
     <section class="py-5 section-bg-3" id="sec-trailers">
-        <div class="container section-padding-top">
+        <div class="container section-padding-top" id="sec-trailers-rate">
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
@@ -455,7 +455,7 @@
 
     <!-- section5 -->
     <section class="section-dark-bg" id="sec-footer">
-        <div class="container section-padding">
+        <div class="container section-padding" id="sec-footer-rate">
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center">
                     <img src="images/main-logo.png" alt="Crystal Fall" class="mb-4 img-fluid">
@@ -594,11 +594,11 @@
         document.addEventListener('DOMContentLoaded', function () {
 
             const sections = [
-                'sec-hero',
-                'sec-reward',
-                'sec-introduction',
-                'sec-trailers',
-                'sec-footer'
+                'sec-hero-rate',
+                'sec-reward-rate',
+                'sec-introduction-rate',
+                'sec-trailers-rate',
+                'sec-footer-rate'
             ];
 
             const observer = new IntersectionObserver((entries) => {
