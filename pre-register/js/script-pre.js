@@ -462,8 +462,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             // ถ้าใช้ International Phone Input ให้ clear error เมื่อ input มีการเปลี่ยนแปลง
             if (field.useInternationalPhone) {
                 input.addEventListener('input', function () {
-                    // ลบ space ออก
-                    this.value = this.value.replace(/\s/g, '');
+                    // อนุญาตเฉพาะตัวเลขเท่านั้น
+                    this.value = this.value.replace(/[^0-9]/g, '');
 
                     if (this.value !== '' && validatePhone(this.value, fieldKey)) {
                         clearError(this, errorElement);

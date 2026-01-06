@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook redirect</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9PRL4X9');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PRL4X9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script>
+        fetch('https://ip2location.playpark.com/detectip.ashx')
+            .then(response => response.json())
+            .then(data => {
+                const seaCountries = ['PH', 'SG', 'MY', 'VN'];
+
+                if (data && seaCountries.includes(data.countryCode)) {
+                    window.location.href = 'https://www.facebook.com/CrystalfallSEA';
+                } else {
+                    window.location.href = 'https://www.facebook.com/PlayCrystalfall';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching IP location:', error);
+                window.location.href = 'https://www.facebook.com/PlayCrystalfall';
+            });
+    </script>
+</body>
+
+</html>
