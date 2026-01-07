@@ -700,6 +700,10 @@ span.prereg-required {
         font-size: 30px;
     }
 
+    .hero-content {
+        width: 70%;
+    }
+
 }
 
 /* Mobile adjustments */
