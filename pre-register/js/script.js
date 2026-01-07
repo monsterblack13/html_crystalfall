@@ -423,13 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedLang = getInitialLang();
     applyLanguage(selectedLang);
 
-    // Initial URL cleanup if lang is in URL but we want to hide it (optional, but user requested 'no param when pressing change')
-    // If we want to clean it on load too:
-    const url = new URL(window.location.href);
-    if (url.searchParams.has('lang')) {
-        url.searchParams.delete('lang');
-        window.history.replaceState({}, '', url.toString());
-    }
+    // Initial URL cleanup code removed to support SEO (Method 3)
+    // We want to keep ?lang= param in the URL now.
 
     // Handle language switch clicks with reload (to ensure form and all components update)
     document.querySelectorAll('.lang-link').forEach(a => {
@@ -437,14 +432,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const lang = a.getAttribute('data-lang');
 
-            // Update state
+            // Update state (optional, getInitialLang handles it on next load too)
             localStorage.setItem('lang', lang);
 
-            // Clean URL and reload
+            // Set URL param and navigate (Preserves other params like UTM)
             const url = new URL(window.location.href);
-            url.searchParams.delete('lang');
-            window.history.replaceState({}, '', url.toString());
-            window.location.reload();
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
         });
     });
 
