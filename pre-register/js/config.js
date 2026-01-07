@@ -82,11 +82,17 @@ const CONFIG = {
     }
 };
 
-// Override CONFIG.language from URL param `lang` when present (th / en / id)
+// Override CONFIG.language from URL param `lang` or localStorage
 (function overrideConfigLanguageFromUrl() {
     try {
         const params = new URLSearchParams(window.location.search);
-        const lang = (params.get('lang') || '').toLowerCase();
+        let lang = (params.get('lang') || '').toLowerCase();
+
+        // If not in URL, check localStorage
+        if (!lang && typeof localStorage !== 'undefined') {
+            lang = localStorage.getItem('lang');
+        }
+
         if (lang === 'th' || lang === 'en' || lang === 'id') {
             CONFIG.language = lang;
         }

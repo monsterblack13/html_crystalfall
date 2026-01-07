@@ -97,9 +97,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Language switcher: change text based on `?lang=` parameter (th / en / id)
 document.addEventListener('DOMContentLoaded', () => {
-    function getLangFromUrl() {
+    function getInitialLang() {
         const params = new URLSearchParams(window.location.search);
-        return (params.get('lang') || 'en').toLowerCase();
+        const urlLang = params.get('lang');
+
+        // 1. ถ้ามี param ใน url ให้ยึดตาม url เป็นหลัก และบันทึกทับลง localStorage ทันที
+        if (urlLang && ['th', 'en', 'id'].includes(urlLang.toLowerCase())) {
+            const lang = urlLang.toLowerCase();
+            localStorage.setItem('lang', lang);
+            return lang;
+        }
+
+        // 2. ถ้าไม่มีใน url ค่อยไปดูใน localStorage
+        const stored = localStorage.getItem('lang');
+        if (stored) return stored;
+
+        // 3. ถ้าไม่มีอะไรเลย ใช้ default
+        return 'en';
     }
 
     const translations = {
@@ -134,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'page-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
             'meta-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
             'og-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
-            'og-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.'
+            'og-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
+            'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game'
         },
         th: {
             'ctf-nav-register': 'ลงทะเบียน',
@@ -166,14 +181,15 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-resource-faq': 'คำถามที่พบบ่อย',
             'page-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
             'meta-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
-            'og-title': 'Crystalfall – สุดยอดเกม Classic ARPG ออนไลน์ฟรีบน PC | ลงทะเบียนล่วงหน้า',
-            'og-description': 'Crystalfall เกมออนไลน์ Action RPG สไตล์ hack ’n’ slash สุดคลาสสิก เล่นฟรี บน PC สำรวจดันเจี้ยน สร้างบิลด์ไม่รู้จบ และพัฒนาตัวละครในโลก steampunk'
+            'og-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
+            'og-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
+            'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, เกม ARPG เล่นฟรี, Action RPG, Hack and Slash, Steampunk ARPG, โลก Steampunk, เกมแฟนตาซีดาร์ก, ตะลุยดันเจี้ยน, ดันเจี้ยนแบบสุ่ม, เกม ARPG เน้นลูท, ระบบสกิลพาสซีฟ, บิลด์ตัวละครแบบผสมผสาน, ความหลากหลายของบิลด์, ระบบอัปเกรดพลัง, เกมบน Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
         },
         id: {
-            'ctf-nav-register': 'Register',
-            'ctf-nav-rewards': 'Rewards',
-            'ctf-nav-introduction': 'Introduction',
-            'ctf-nav-trailers': 'Trailers',
+            'ctf-nav-register': 'Registrasi',
+            'ctf-nav-rewards': 'Hadiah',
+            'ctf-nav-introduction': 'Pengenalan',
+            'ctf-nav-trailers': 'Trailer',
             'ctf-head-text': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'ctf-class-character': 'Kelas / Karakter',
             'ctf-class-description': 'Pilih kelas Anda dan bertahan hidup di dunia yang hancur oleh asteroid misterius, melawan musuh steampunk untuk mencari loots epik.',
@@ -197,10 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-resource-eula': 'EULA',
             'ctf-footer-resource-support': 'Dukungan',
             'ctf-footer-resource-faq': 'FAQ',
-            'page-title': 'Crystalfall – Game ARPG Hack’n’Slash Klasik Online Gratis di PC | Pra-Registrasi',
-            'meta-description': 'Crystalfall adalah game online gratis bergenre classic hack’n’slash ARPG di PC, menampilkan variasi build tanpa batas, penjelajahan dungeon, dan progresi karakter mendalam di dunia steampunk. Pra-registrasi sekarang untuk hadiah eksklusif.',
-            'og-title': 'Crystalfall – Game ARPG Hack’n’Slash Klasik Online Gratis di PC | Pra-Registrasi',
-            'og-description': 'Crystalfall adalah game online gratis bergenre classic hack’n’slash ARPG di PC, menampilkan variasi build tanpa batas, penjelajahan dungeon, dan progresi karakter mendalam di dunia steampunk. Pra-registrasi sekarang untuk hadiah eksklusif.'
+            'page-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
+            'meta-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
+            'og-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
+            'og-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
+            'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Game Online Gratis, ARPG Free-to-Play, Action RPG, Hack & Slash, Dungeon Crawler, Loot-driven ARPG, Steampunk ARPG, Dunia Steampunk, Dark Fantasy, Sistem Talent Pasif, Build Karakter Sinergi, Variasi Build Tanpa Batas, Dungeon Acak, Sistem Upgrade Kekuatan, Game PC Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
         }
     };
 
@@ -403,13 +420,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const selectedLang = getLangFromUrl();
+    let selectedLang = getInitialLang();
     applyLanguage(selectedLang);
 
-    // Ensure dropdown links include full path (preserve pathname)
+    // Initial URL cleanup if lang is in URL but we want to hide it (optional, but user requested 'no param when pressing change')
+    // If we want to clean it on load too:
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('lang')) {
+        url.searchParams.delete('lang');
+        window.history.replaceState({}, '', url.toString());
+    }
+
+    // Handle language switch clicks with reload (to ensure form and all components update)
     document.querySelectorAll('.lang-link').forEach(a => {
-        const lang = a.getAttribute('data-lang');
-        a.href = window.location.pathname + '?lang=' + lang;
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = a.getAttribute('data-lang');
+
+            // Update state
+            localStorage.setItem('lang', lang);
+
+            // Clean URL and reload
+            const url = new URL(window.location.href);
+            url.searchParams.delete('lang');
+            window.history.replaceState({}, '', url.toString());
+            window.location.reload();
+        });
     });
 
     // Milestone Logic

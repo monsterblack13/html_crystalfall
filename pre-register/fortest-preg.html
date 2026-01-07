@@ -8,8 +8,8 @@
     <!-- SEO Meta Tags -->
     <meta name="description" id="meta-description"
         content="Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.">
-    <meta name="keywords"
-        content="Crystalfall, Crystal Fall, ARPG, Hack and Slash, Pre-register, Game, Action RPG, Online Game, PlayPark">
+    <meta name="keywords" id="meta-keywords"
+        content="Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game">
     <meta name="author" content="PlayPark">
     <link rel="icon" href="images/favicon.ico">
     <!-- <meta name="robots" content="index, follow"> -->
@@ -595,25 +595,7 @@
     <script src="js/script-pre.js"></script>
     <!-- <script src="https://media-web.playpark.com/pre-reg-v5/script.js"></script> -->
 
-    <script>
-        document.querySelectorAll('.lang-link').forEach(function (el) {
-            el.addEventListener('click', function (e) {
-                e.preventDefault();
 
-                var lang = this.getAttribute('data-lang');
-                var url = new URL(window.location.href);
-
-                // ลบ lang เดิมทั้งหมด
-                url.searchParams.delete('lang');
-
-                // ใส่ lang ใหม่ (ตัวเดียว)
-                url.searchParams.set('lang', lang);
-
-                // redirect
-                window.location.href = url.toString();
-            });
-        });
-    </script>
 
     <!-- section acccess check -->
 
