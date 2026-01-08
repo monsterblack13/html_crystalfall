@@ -642,6 +642,11 @@ span.prereg-required {
     color: #d4a855;
 }
 
+.footer-ci {
+    font-size: 14px !important;
+    font-weight: 100 !important;
+}
+
 .character-name {
     color: #F2BF50;
     font-size: 48px;

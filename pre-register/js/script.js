@@ -418,6 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.lang-link').forEach(a => {
             a.classList.toggle('active', a.getAttribute('data-lang') === lang);
         });
+
+        // Update html lang attribute
+        document.documentElement.lang = lang;
+
+        // Update canonical and og:url to match hreflang structure
+        const baseUrl = "https://crystalfall.playpark.com/pre-register";
+        const newUrl = `${baseUrl}?lang=${lang}`;
+
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = newUrl;
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.content = newUrl;
     }
 
     let selectedLang = getInitialLang();
