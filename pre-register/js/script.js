@@ -131,11 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description1': 'Powerful hybrid of human and lion, specializing in melee combat with blades and shields.',
             'ctf-class-description2': 'Mutated foxes adept at dealing consistent damage from close or long range with pistols, rifles and shotguns.',
             'ctf-class-description3': 'Enigmatic hybrids of human and crow, wielding steampunk staffs infused with aether.',
-            'ctf-trailer-description': 'Kickstart your adventure in a free online classic hack’n’slash Action RPG, featuring randomized dungeons, procedural skills, and an endless endgame set in a steampunk world.',
+            'ctf-trailer-description': 'Kickstart your adventure in a free to play online steampunk action RPG, featuring randomized dungeons, procedural skills, and an endless endgame set in a steampunk world.',
             'ctf-footer-subtitle': "CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY",
             'register-banner': 'Register',
             'ctf-reward-description': 'Rewards are unlocked based on the total number of players who complete both pre-registration and add the game to their Steam Wishlist',
-            'ctf-rewards-notice': 'Rewards are available for pre-registered & wishlist players only<br>Players who already wishlisted Crystalfall on Steam only need to pre-register.',
+            'ctf-rewards-notice': 'Rewards are unlocked based on the total number of players who complete both pre-registration and add the game to their Steam Wishlist.',
             'ctf-footer-contact': 'If you encounter any issues with pre-registration, please contact us <a href="https://playpark.com/support-crystalfall" target="_blank">here</a>.',
             'ctf-footer-disclaimer': 'Disclaimer',
             'ctf-footer-disclaimer-text': 'Crystalfall is an action RPG still in development and while we aspire to accurately describe the game, we cannot guarantee that everything you are presented with here will make it into the final product.',
@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-resource-eula': 'EULA',
             'ctf-footer-resource-support': 'Support',
             'ctf-footer-resource-faq': 'FAQ',
-            'page-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
-            'meta-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
+            'page-title': 'Crystalfall – Free to play online action RPG on PC | Pre-Register',
+            'meta-description': 'Crystalfall is a free online hack’n’slash Action RPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
             'og-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
             'og-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game'
@@ -165,11 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description1': 'ลูกผสมระหว่างมนุษย์กับสิงโตอันทรงพลัง ถนัดในการต่อสู้ระยะประชิดด้วยดาบและโล่',
             'ctf-class-description2': 'หมาจิ้งจอกกลายพันธุ์ที่ถนัดด้านการสร้างความเสียหายต่อเนื่องทั้งแบบประชิดและระยะไกลด้วยปืนพก, ไรเฟิล, และปืนลูกซอง',
             'ctf-class-description3': 'ลูกผสมระหว่างมนุษย์กับอีกาที่ว่องไว ใช้ไม้เท้าสตีมพังค์ที่บรรจุอีเธอร์เป็นอาวุธ',
-            'ctf-trailer-description': 'เริ่มต้นการผจญภัยในเกม Action RPG สไตล์ hack ’n’ slash แบบคลาสสิก ออนไลน์ เล่นฟรี พร้อมดันเจี้ยนแบบสุ่ม สกิลหลากหลาย และ endgame ที่เล่นได้ไม่รู้จบ ในโลก steampunk',
+            'ctf-trailer-description': 'เริ่มต้นการผจญภัยของคุณในเกม Action RPG ออนไลน์แบบ Free-to-Play ธีม steampunk ที่มาพร้อมดันเจี้ยนแบบสุ่ม สกิลที่สร้างแบบสุ่มตามระบบ (procedural) และ end game ที่ไม่มีที่สิ้นสุดในโลก steampunk',
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'จำนวนผู้ลงทะเบียน',
             'ctf-reward-description': 'รางวัลจะปลดล็อคตามจำนวนของผู้เล่นที่ดำเนินการเรียบร้อยทั้งการลงทะเบียนล่วงหน้าและกด wishlist เกมใน Steam',
-            'ctf-rewards-notice': 'รางวัลจะให้แก่ผู้เล่นที่ลงทะเบียนล่วงหน้าและกด wishlist เท่านั้น<br>ผู้เล่นที่เพิ่ม Crystalfall ไว้ใน Wishlist บน Steam แล้ว เพียงแค่ทำการลงทะเบียนล่วงหน้าเท่านั้น',
+            'ctf-rewards-notice': 'รางวัลจะส่งผ่านอีเมล์ที่ลงทะเบียนล่วงหน้า และมอบให้แก่ผู้ที่ลงทะเบียนล่วงหน้าและกด wishlist เท่านั้น',
             'ctf-footer-contact': 'หากพบปัญหาในการลงทะเบียน โปรดติดต่อเรา <a href="https://playpark.com/support-crystalfall" target="_blank">ที่นี่</a>.',
             'ctf-footer-disclaimer': 'Disclaimer',
             'ctf-footer-disclaimer-text': 'Crystalfall เป็นเกม Action RPG ที่อยู่ระหว่างการพัฒนา แม้ว่าเราจะพยายามสื่อสารถึงสิ่งที่เรากำลังพัฒนาอย่างดีที่สุด แต่เราไม่สามารถรับประกันได้ว่าทุกสิ่งที่ท่านเห็นนี้ จะมีอยู่ในเกมตัวจริง',
@@ -179,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-resource-eula': 'EULA',
             'ctf-footer-resource-support': 'การสนับสนุน',
             'ctf-footer-resource-faq': 'คำถามที่พบบ่อย',
-            'page-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
-            'meta-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
+            'page-title': 'Crystalfall – เกมออนไลน์ Action RPG เล่นฟรี บน PC | Pre-Register',
+            'meta-description': 'Crystalfall เกมออนไลน์ Action RPG แนว hack’n’slash เล่นฟรีบน PC มาสำรวจดันเจี้ยน พร้อมระบบบิลด์ที่หลากหลาย และพัฒนาตัวละครในโลก steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลพิเศษ!',
             'og-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
             'og-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, เกม ARPG เล่นฟรี, Action RPG, Hack and Slash, Steampunk ARPG, โลก Steampunk, เกมแฟนตาซีดาร์ก, ตะลุยดันเจี้ยน, ดันเจี้ยนแบบสุ่ม, เกม ARPG เน้นลูท, ระบบสกิลพาสซีฟ, บิลด์ตัวละครแบบผสมผสาน, ความหลากหลายของบิลด์, ระบบอัปเกรดพลัง, เกมบน Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
@@ -199,11 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-class-description1': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-class-description2': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
             'ctf-class-description3': 'Deskripsi dan latar belakang karakter akan ditempatkan di sini.',
-            'ctf-trailer-description': 'Mulai petualangan Anda dalam ARPG hack n\' slash klasik—menampilkan dungeon acak, keterampilan prosedural, dan konten endgame yang tak terbatas.',
+            'ctf-trailer-description': 'Mulai petualanganmu dalam action RPG online steampunk yang gratis dimainkan, dengan dungeon acak, keterampilan prosedural, dan permainan akhir tanpa batas yang berlatar dunia steampunk.',
             'ctf-footer-subtitle': 'CLASSIC ARPG<br>WITH ENDLESS BUILD DIVERSITY',
             'register-banner': 'Jumlah pendaftar',
             'ctf-reward-description': 'Hadiah akan terbuka sesuai dengan jumlah total pemain yang sudah melakukan pre-registrasi dan menambahkan game ke Steam Wishlist.',
-            'ctf-rewards-notice': 'Hadiah hanya tersedia untuk pemain yang sudah pre-registrasi dan wishlist..<br>Pengguna yang sudah menambahkan Crystalfall ke wishlist di Steam hanya perlu melakukan pre-registrasi.',
+            'ctf-rewards-notice': 'Hadiah akan dikirimkan ke alamat email pada saat pre-registrasi dan hanya tersedia untuk pemain yang telah melakukan pre-registrasi dan masuk dalam wishlist.',
             'ctf-footer-contact': 'Jika Anda mengalami kendala saat melakukan pre-registrasi, silakan hubungi kami di <a href="https://playpark.com/support-crystalfall" target="_blank">sini</a>.',
             'ctf-footer-disclaimer': 'Desclaimer',
             'ctf-footer-disclaimer-text': 'Crystalfall adalah game Action RPG yang masih dalam tahap pengembangan. Kami tidak dapat menjamin bahwa semua konten yang ditampilkan saat ini akan tersedia pada produk akhir.',
@@ -213,8 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'ctf-footer-resource-eula': 'EULA',
             'ctf-footer-resource-support': 'Dukungan',
             'ctf-footer-resource-faq': 'FAQ',
-            'page-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
-            'meta-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
+            'page-title': 'Crystalfall – Gratis untuk dimainkan, action RPG online di PC | Pre-Registrasi',
+            'meta-description': 'Crystalfall adalah game Action RPG hack’n’slash online gratis di PC, dengan keragaman build tanpa batas, penjelajahan dungeon, dan perkembangan karakter yang mendalam di dalam dunia steampunk. Pre-Registrasi sekarang untuk mendapatkan hadiah eksklusif.',
             'og-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
             'og-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Game Online Gratis, ARPG Free-to-Play, Action RPG, Hack & Slash, Dungeon Crawler, Loot-driven ARPG, Steampunk ARPG, Dunia Steampunk, Dark Fantasy, Sistem Talent Pasif, Build Karakter Sinergi, Variasi Build Tanpa Batas, Dungeon Acak, Sistem Upgrade Kekuatan, Game PC Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update canonical and og:url to match hreflang structure
         const baseUrl = "https://crystalfall.playpark.com/pre-register";
-        const newUrl = `${baseUrl}?lang=${lang}`;
+        const newUrl = lang === 'en' ? baseUrl : `${baseUrl}?lang=${lang}`;
 
         const canonical = document.querySelector('link[rel="canonical"]');
         if (canonical) canonical.href = newUrl;
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Milestone Logic
     // const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
     // Manual value if API is disabled or fails
-    const MANUAL_MILESTONE = 50000;
+    const MANUAL_MILESTONE = 54338;
 
     function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

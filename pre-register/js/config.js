@@ -19,7 +19,7 @@ const CONFIG = {
     // IP Detection API (สำหรับตรวจจับประเทศอัตโนมัติ)
     ipDetectionAPI: {
         enabled: true,
-        url: 'https://ip2location.playpark.com/detectip.ashx'
+        url: 'https://ip2location.playpark.com/IP2locationAll.ashx'
     },
 
     // กำหนดฟิลด์ที่ใช้ในฟอร์ม
