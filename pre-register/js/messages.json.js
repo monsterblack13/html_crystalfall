@@ -12,7 +12,7 @@ const ALL_MESSAGES = {
             submitting: 'กำลังส่งข้อมูล...',
             submitButton: 'ยืนยัน',
             success: 'ลงทะเบียนสำเร็จ!',
-            successDescription: 'เพิ่ม Crystalfall ลงใน Steam Wishlist เพื่อให้สามารถรับรางวัลการลงทะเบียนล่วงหน้าได้<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_TH" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
+            successDescription: 'เพิ่ม Crystalfall ลงใน Steam Wishlist เพื่อให้สามารถรับรางวัลการลงทะเบียนล่วงหน้าได้<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_TH" target="_blank"><img src="images/stream-btn.png" id="ctf-stream-success-th" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'นี่คือลิงก์สาธิต (Demo Link)'
         },
         labels: {
@@ -117,7 +117,7 @@ const ALL_MESSAGES = {
             submitting: 'Submitting...',
             submitButton: 'Submit',
             success: 'Registration Successful!',
-            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_EN" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
+            successDescription: 'Add Crystalfall to your Steam Wishlist to qualify for pre-registration rewards.<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_EN" target="_blank"><img src="images/stream-btn.png" id="ctf-stream-success-en" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'This is a demo link'
         },
         labels: {
@@ -222,7 +222,7 @@ const ALL_MESSAGES = {
             submitting: 'Mengirim...',
             submitButton: 'Kirim',
             success: 'Registrasi Berhasil!',
-            successDescription: 'Tambahkan Crystalfall ke Steam Wishlist kamu untuk mendapatkan hadiah pre-registrasi.<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_ID" target="_blank"><img src="images/stream-btn.png" class="img-fluid mt-1" alt="Stream"></a>',
+            successDescription: 'Tambahkan Crystalfall ke Steam Wishlist kamu untuk mendapatkan hadiah pre-registrasi.<br><a href="https://store.steampowered.com/app/2574970/Crystalfall/?utm_source=PPlanding_Pre-register_ID" target="_blank"><img src="images/stream-btn.png" id="ctf-stream-success-id" class="img-fluid mt-1" alt="Stream"></a>',
             demoLink: 'Ini adalah link demo'
         },
         labels: {
