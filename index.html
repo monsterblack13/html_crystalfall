@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystalfall Pre Registration</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9PRL4X9');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
-<body>
-    <h1>Crystalfall Pre Registration</h1>
+
+<body style="background-color: black;">
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PRL4X9" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $.getJSON("https://ip2location.playpark.com/detectip.ashx",
+                function (json) {
+                    var params = window.location.search; // Get parameters from current URL
+                    switch (json.countryCode) {
+                        case 'TH':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=th' + params;
+                            break;
+                        case 'SG':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=en' + params;
+                            break;
+                        case 'MY':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=en' + params;
+                            break;
+                        case 'ID':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=id' + params;
+                            break;
+                        case 'VN':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=en' + params;
+                            break;
+                        case 'PH':
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=en' + params;
+                            break;
+                        default:
+                            window.location.href = 'https://crystalfall.playpark.com/pre-register/?lang=en' + params;
+                            break;
+                    }
+                }
+            )
+        });
+    </script>
+
 </body>
+
 </html>

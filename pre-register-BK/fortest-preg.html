@@ -12,43 +12,8 @@
         content="Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game">
     <meta name="author" content="PlayPark">
     <link rel="icon" href="images/favicon.ico">
-    <meta name="robots" content="index, follow">
-
-    <!-- Language Detection and Redirection -->
-    <script>
-        (function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (!urlParams.has('lang')) {
-                const storedLang = localStorage.getItem('lang');
-                if (storedLang && ['th', 'en', 'id'].includes(storedLang)) {
-                    urlParams.set('lang', storedLang);
-                    window.location.replace(window.location.pathname + '?' + urlParams.toString() + window.location.hash);
-                } else {
-                    fetch('https://ip2location.playpark.com/IP2locationAll.ashx')
-                        .then(res => res.json())
-                        .then(data => {
-                            let lang = 'en';
-                            const country = (data.countryCode || '').toUpperCase();
-                            if (country === 'TH') {
-                                lang = 'th';
-                            } else if (country === 'ID') {
-                                lang = 'id';
-                            } else {
-                                // Default for SG, MY, VN, PH, OT and others
-                                lang = 'en';
-                            }
-                            urlParams.set('lang', lang);
-                            window.location.replace(window.location.pathname + '?' + urlParams.toString() + window.location.hash);
-                        })
-                        .catch(err => {
-                            console.error('IP Detection failed:', err);
-                            urlParams.set('lang', 'en');
-                            window.location.replace(window.location.pathname + '?' + urlParams.toString() + window.location.hash);
-                        });
-                }
-            }
-        })();
-    </script>
+    <!-- <meta name="robots" content="index, follow"> -->
+    <meta name="robots" content="noindex, nofollow">
 
 
     <!-- Open Graph / Facebook -->
@@ -110,8 +75,6 @@
                             id="ctf-nav-introduction">Introduction</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sec-trailers" id="ctf-nav-trailers">Trailers</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="https://playpark.com/support-crystalfall/"
-                            target="_blank" id="ctf-nav-support">Support</a></li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto navbar-right-items" id="nav--social">
@@ -539,7 +502,7 @@
                                 id="ctf-footer-social-youtube"></a>
                     </div>
                     <p class="footer-text-contact" id="ctf-footer-contact">If you encounter any issues with
-                        pre-registration, please contact us <a href="https://playpark.com/support-crystalfall/"
+                        pre-registration, please contact us <a href="https://playpark.com/support-crystalfall"
                             target="_blank" rel="noopener noreferrer">here</a>.</p>
                 </div>
             </div>

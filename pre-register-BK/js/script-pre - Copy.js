@@ -297,8 +297,8 @@ function initializeInternationalPhone(formInputs) {
             const options = field.intlPhoneOptions || {};
             const defaultOptions = {
                 initialCountry: options.initialCountry || 'th',
-                // ใช้ preferredCountries เพื่อแสดงประเทศที่กำหนดไว้ข้างบน แต่ยังเลือกประเทศอื่นได้ทั้งหมด
-                preferredCountries: options.preferredCountries || ['th', 'sg', 'my', 'id', 'ph', 'vn'],
+                // ใช้ onlyCountries แทน preferredCountries เพื่อแสดงเฉพาะประเทศที่กำหนด
+                onlyCountries: options.preferredCountries || ['th', 'sg', 'my', 'id', 'ph', 'vn'],
                 separateDialCode: options.separateDialCode !== undefined ? options.separateDialCode : false,
                 autoPlaceholder: 'aggressive',
                 nationalMode: false,  // แสดงรหัสประเทศใน input
@@ -462,8 +462,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             // ถ้าใช้ International Phone Input ให้ clear error เมื่อ input มีการเปลี่ยนแปลง
             if (field.useInternationalPhone) {
                 input.addEventListener('input', function () {
-                    // อนุญาตเฉพาะตัวเลขเท่านั้น
-                    this.value = this.value.replace(/[^0-9]/g, '');
+                    // ลบ space ออก
+                    this.value = this.value.replace(/\s/g, '');
 
                     if (this.value !== '' && validatePhone(this.value, fieldKey)) {
                         clearError(this, errorElement);
@@ -586,27 +586,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     // Create Success Iframe (req: 10x10, close in 5s)
                     const iframe = document.createElement('iframe');
-
-                    // Append UTM parameters from current URL
-                    const currentParams = new URLSearchParams(window.location.search);
-                    const utmParams = new URLSearchParams();
-                    currentParams.forEach((value, key) => {
-                        if (key.toLowerCase().startsWith('utm_')) {
-                            utmParams.set(key, value);
-                        }
-                    });
-
-                    let iframeSrc = 'success.html?=preg';
-                    const utmString = utmParams.toString();
-                    if (utmString) {
-                        iframeSrc += '&' + utmString;
-                    }
-
-                    iframe.src = iframeSrc;
+                    iframe.src = 'success.html?=preg';
                     iframe.style.width = '10px';
                     iframe.style.height = '10px';
                     iframe.style.border = 'none';
-                    iframe.style.background = '#1d1c24';
 
 
                     successMessage.appendChild(iframe);
@@ -706,51 +689,5 @@ document.addEventListener('DOMContentLoaded', async function () {
                 submitBtn.textContent = MESSAGES.general.submitButton;
             });
     });
-
-    // ======================================
-    // Modal Reset Logic
-    // ======================================
-    const preRegModal = document.getElementById('preRegModal');
-    if (preRegModal) {
-        preRegModal.addEventListener('hidden.bs.modal', function () {
-            // 1. Reset Form (Clears user input)
-            form.reset();
-
-            // 2. Re-apply Auto-fill data (Restores IP-detected values)
-            if (typeof ipData !== 'undefined' && ipData) {
-                autoFillFromIPData(ipData, formInputs);
-            }
-
-            // 3. Clear Error Messages & Classes
-            Object.keys(CONFIG.fields).forEach(fieldKey => {
-                const input = formInputs[fieldKey];
-                const errorElement = formErrors[fieldKey];
-
-                if (input) input.classList.remove('error');
-                if (errorElement) errorElement.textContent = '';
-            });
-
-            // 4. Reset UI States (Show Form, Hide Success)
-            form.style.display = 'block';
-            const title = document.querySelector('#registrationCard h1');
-            const subtitle = document.querySelector(`.${prefix}subtitle`);
-            if (title) title.style.display = 'block';
-            if (subtitle) subtitle.style.display = 'block';
-
-            const successMessage = document.getElementById(`${prefix}successMessage`);
-            if (successMessage) {
-                successMessage.style.display = 'none';
-                const iframe = successMessage.querySelector('iframe');
-                if (iframe) iframe.remove();
-            }
-
-            // 5. Reset Submit Button
-            const submitBtn = form.querySelector(`.${prefix}submit-btn`);
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = MESSAGES.general.submitButton;
-            }
-        });
-    }
 });
 

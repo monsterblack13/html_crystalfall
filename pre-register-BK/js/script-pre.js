@@ -70,8 +70,9 @@ function generateForm() {
                     <span class="${prefix}error-message" id="${prefix}${field.errorId}"></span>
                 </div>
             `;
-        } else if (field.type === 'select') {
+        } else if (field.type === 'select' || field.type === 'search-select') {
             // Select/Dropdown field
+            const isSearchable = field.type === 'search-select';
             const defaultValue = escapeHtml(field.defaultValue !== undefined ? String(field.defaultValue) : '');
 
             // ดึง options จาก MESSAGES.options หรือใช้ options จาก config
@@ -90,22 +91,56 @@ function generateForm() {
                 optionsHTML += `<option value="${optionValue}" ${selected}>${optionLabel}</option>`;
             });
 
-            formHTML += `
-                <div class="${prefix}form-group">
-                    <label for="${prefix}${field.htmlId}">
-                        ${label}
-                        ${field.required ? `<span class="${prefix}required">*</span>` : ''}
-                    </label>
-                    <select 
-                        id="${prefix}${field.htmlId}" 
-                        name="${field.htmlId}"
-                        ${field.required ? 'required' : ''}
-                    >
-                        ${optionsHTML}
-                    </select>
-                    <span class="${prefix}error-message" id="${prefix}${field.errorId}"></span>
-                </div>
-            `;
+            if (isSearchable) {
+                formHTML += `
+                    <div class="${prefix}form-group">
+                        <label for="${prefix}${field.htmlId}">
+                            ${label}
+                            ${field.required ? `<span class="${prefix}required">*</span>` : ''}
+                        </label>
+                        <div class="${prefix}search-select-wrap" id="${prefix}${field.htmlId}-wrap">
+                            <div class="${prefix}search-select-display">
+                                <span class="${prefix}search-select-text">${placeholder || label}</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="${prefix}search-select-dropdown">
+                                <div class="${prefix}search-select-search-box">
+                                    <input type="text" placeholder="${placeholder || 'Search...'}" class="${prefix}search-select-search-input">
+                                </div>
+                                <ul class="${prefix}search-select-options">
+                                    ${options.map(opt => `<li data-value="${escapeHtml(opt.value)}">${escapeHtml(opt.label)}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <select 
+                                id="${prefix}${field.htmlId}" 
+                                name="${field.htmlId}"
+                                ${field.required ? 'required' : ''}
+                                style="display:none;"
+                            >
+                                ${optionsHTML}
+                            </select>
+                        </div>
+                        <span class="${prefix}error-message" id="${prefix}${field.errorId}"></span>
+                    </div>
+                `;
+            } else {
+                formHTML += `
+                    <div class="${prefix}form-group">
+                        <label for="${prefix}${field.htmlId}">
+                            ${label}
+                            ${field.required ? `<span class="${prefix}required">*</span>` : ''}
+                        </label>
+                        <select 
+                            id="${prefix}${field.htmlId}" 
+                            name="${field.htmlId}"
+                            ${field.required ? 'required' : ''}
+                        >
+                            ${optionsHTML}
+                        </select>
+                        <span class="${prefix}error-message" id="${prefix}${field.errorId}"></span>
+                    </div>
+                `;
+            }
         } else {
             // Text input fields (email, text, tel, number, etc.)
             const defaultValue = escapeHtml(field.defaultValue !== undefined ? String(field.defaultValue) : '');
@@ -221,7 +256,7 @@ function autoFillFromIPData(ipData, formInputs) {
                 if (!input) return;
 
                 // ถ้าเป็น select field ให้เช็คว่า value มีใน options หรือไม่
-                if (field.type === 'select' && input.tagName === 'SELECT') {
+                if ((field.type === 'select' || field.type === 'search-select') && input.tagName === 'SELECT') {
                     const optionExists = Array.from(input.options).some(opt => opt.value === value);
                     if (!optionExists) {
                         value = field.fallbackDefault || '';
@@ -343,6 +378,107 @@ function initializeInternationalPhone(formInputs) {
 }
 
 // ======================================
+// ฟังก์ชัน Initialize Searchable Select
+// ======================================
+
+function initializeSearchSelects(formInputs) {
+    const prefix = CONFIG.prefix || '';
+
+    Object.keys(CONFIG.fields).forEach(fieldKey => {
+        const field = CONFIG.fields[fieldKey];
+        if (field.type !== 'search-select') return;
+
+        const wrap = document.getElementById(`${prefix}${field.htmlId}-wrap`);
+        if (!wrap) return;
+
+        const display = wrap.querySelector(`.${prefix}search-select-display`);
+        const dropdown = wrap.querySelector(`.${prefix}search-select-dropdown`);
+        const searchInput = wrap.querySelector(`.${prefix}search-select-search-input`);
+        const optionsList = wrap.querySelector(`.${prefix}search-select-options`);
+        const realSelect = document.getElementById(`${prefix}${field.htmlId}`);
+        const displayText = wrap.querySelector(`.${prefix}search-select-text`);
+
+        // Toggle dropdown
+        display.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('show');
+
+            // Close all other dropdowns
+            document.querySelectorAll(`.${prefix}search-select-dropdown.show`).forEach(d => {
+                if (d !== dropdown) d.classList.remove('show');
+            });
+
+            dropdown.classList.toggle('show');
+            if (!isOpen) {
+                searchInput.focus();
+                searchInput.value = '';
+                filterOptions('');
+            }
+        });
+
+        // Search logic
+        searchInput.addEventListener('input', (e) => {
+            filterOptions(e.target.value);
+        });
+
+        searchInput.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        function filterOptions(query) {
+            const items = optionsList.querySelectorAll('li');
+            const q = query.toLowerCase();
+            items.forEach(li => {
+                const text = li.textContent.toLowerCase();
+                if (text.includes(q)) {
+                    li.style.display = 'block';
+                } else {
+                    li.style.display = 'none';
+                }
+            });
+        }
+
+        // Option selection
+        optionsList.addEventListener('click', (e) => {
+            const li = e.target.closest('li');
+            if (!li) return;
+
+            const val = li.getAttribute('data-value');
+            const text = li.textContent;
+
+            realSelect.value = val;
+            displayText.textContent = text;
+            dropdown.classList.remove('show');
+
+            // Trigger change event
+            const event = new Event('change', { bubbles: true });
+            realSelect.dispatchEvent(event);
+        });
+
+        // Close on outside click
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('show');
+        });
+
+        // Handle auto-fill update
+        realSelect.addEventListener('change', () => {
+            const selectedOption = Array.from(realSelect.options).find(opt => opt.value === realSelect.value);
+            if (selectedOption) {
+                displayText.textContent = selectedOption.textContent;
+            }
+        });
+
+        // Initial set text if has value
+        if (realSelect.value) {
+            const selectedOption = Array.from(realSelect.options).find(opt => opt.value === realSelect.value);
+            if (selectedOption) {
+                displayText.textContent = selectedOption.textContent;
+            }
+        }
+    });
+}
+
+// ======================================
 // เริ่มต้นระบบ
 // ======================================
 
@@ -376,6 +512,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // ⭐ Initialize International Telephone Input
     initializeInternationalPhone(formInputs);
+
+    // ⭐ Initialize Searchable Selects
+    initializeSearchSelects(formInputs);
 
     // ⭐ ดึงข้อมูลจาก IP Detection API และ auto-fill
     const ipData = await fetchIPLocation();
@@ -586,27 +725,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     // Create Success Iframe (req: 10x10, close in 5s)
                     const iframe = document.createElement('iframe');
-
-                    // Append UTM parameters from current URL
-                    const currentParams = new URLSearchParams(window.location.search);
-                    const utmParams = new URLSearchParams();
-                    currentParams.forEach((value, key) => {
-                        if (key.toLowerCase().startsWith('utm_')) {
-                            utmParams.set(key, value);
-                        }
-                    });
-
-                    let iframeSrc = 'success.html?=preg';
-                    const utmString = utmParams.toString();
-                    if (utmString) {
-                        iframeSrc += '&' + utmString;
-                    }
-
-                    iframe.src = iframeSrc;
+                    iframe.src = 'success.html?=preg';
                     iframe.style.width = '10px';
                     iframe.style.height = '10px';
                     iframe.style.border = 'none';
-                    iframe.style.background = '#1d1c24';
 
 
                     successMessage.appendChild(iframe);

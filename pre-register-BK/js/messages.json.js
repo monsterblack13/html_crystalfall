@@ -8,7 +8,7 @@ const ALL_MESSAGES = {
     th: {
         general: {
             pageTitle: 'ลงทะเบียน',
-            pageSubtitle: 'โปรดใช้อีเมล์เดียวกับอีเมล์ที่คุณจะใช้ในเกมเพื่อรับรางวัลและสิทธิพิเศษทั้งหมด',
+            pageSubtitle: 'โปรดใช้อีเมลล์เดียวกับอีเมลล์ที่คุณจะใช้ในเกมเพื่อรับรางวัลและสิทธิพิเศษทั้งหมด',
             submitting: 'กำลังส่งข้อมูล...',
             submitButton: 'ยืนยัน',
             success: 'ลงทะเบียนสำเร็จ!',
@@ -30,7 +30,8 @@ const ALL_MESSAGES = {
             address: 'ที่อยู่',
             addressPlaceholder: 'กรอกที่อยู่ของคุณ',
             gender: 'เพศ',
-            country: 'ประเทศ'
+            country: 'ประเทศ',
+            countryPlaceholder: 'ค้นหาหรือเลือกประเทศ...'
         },
         options: {
             genderOptions: [
@@ -41,6 +42,7 @@ const ALL_MESSAGES = {
             ],
             countryOptions: [
                 { value: '', label: '-- เลือกประเทศ --' },
+                // Asia
                 { value: 'TH', label: 'ไทย' },
                 { value: 'SG', label: 'สิงคโปร์' },
                 { value: 'MY', label: 'มาเลเซีย' },
@@ -50,7 +52,71 @@ const ALL_MESSAGES = {
                 { value: 'MM', label: 'พม่า' },
                 { value: 'KH', label: 'กัมพูชา' },
                 { value: 'LA', label: 'ลาว' },
-                { value: 'BN', label: 'บรูไน' }
+                { value: 'BN', label: 'บรูไน' },
+                { value: 'JP', label: 'ญี่ปุ่น' },
+                { value: 'KR', label: 'เกาหลีใต้' },
+                { value: 'CN', label: 'จีน' },
+                { value: 'TW', label: 'ไต้หวัน' },
+                { value: 'HK', label: 'ฮ่องกง' },
+                { value: 'IN', label: 'อินเดีย' },
+                { value: 'PK', label: 'ปากีสถาน' },
+                { value: 'BD', label: 'บังกลาเทศ' },
+                { value: 'NP', label: 'เนปาล' },
+                { value: 'LK', label: 'ศรีลังกา' },
+                { value: 'AE', label: 'สหรัฐอาหรับเอมิเรตส์' },
+                { value: 'SA', label: 'ซาอุดีอาระเบีย' },
+                { value: 'IL', label: 'อิสราเอล' },
+                { value: 'TR', label: 'ตุรกี' },
+
+                // Europe
+                { value: 'GB', label: 'สหราชอาณาจักร' },
+                { value: 'FR', label: 'ฝรั่งเศส' },
+                { value: 'DE', label: 'เยอรมนี' },
+                { value: 'IT', label: 'อิตาลี' },
+                { value: 'ES', label: 'สเปน' },
+                { value: 'NL', label: 'เนเธอร์แลนด์' },
+                { value: 'BE', label: 'เบลเยียม' },
+                { value: 'CH', label: 'สวิตเซอร์แลนด์' },
+                { value: 'SE', label: 'สวีเดน' },
+                { value: 'NO', label: 'นอร์เวย์' },
+                { value: 'FI', label: 'ฟินแลนด์' },
+                { value: 'DK', label: 'เดนมาร์ก' },
+                { value: 'PL', label: 'โปแลนด์' },
+                { value: 'AT', label: 'ออสเตรีย' },
+                { value: 'IE', label: 'ไอร์แลนด์' },
+                { value: 'PT', label: 'โปรตุเกส' },
+                { value: 'GR', label: 'กรีซ' },
+                { value: 'CZ', label: 'เช็ก' },
+                { value: 'HU', label: 'ฮังการี' },
+                { value: 'RO', label: 'โรมาเนีย' },
+                { value: 'RU', label: 'รัสเซีย' },
+                { value: 'UA', label: 'ยูเครน' },
+
+                // America
+                { value: 'US', label: 'สหรัฐอเมริกา' },
+                { value: 'CA', label: 'แคนาดา' },
+                { value: 'MX', label: 'เม็กซิโก' },
+                { value: 'BR', label: 'บราซิล' },
+                { value: 'AR', label: 'อาร์เจนตินา' },
+                { value: 'CL', label: 'ชิลี' },
+                { value: 'CO', label: 'โคลอมเบีย' },
+                { value: 'PE', label: 'เปรู' },
+                { value: 'VE', label: 'เวเนซุเอลา' },
+
+                // Oceania
+                { value: 'AU', label: 'ออสเตรเลีย' },
+                { value: 'NZ', label: 'นิวซีแลนด์' },
+                { value: 'PG', label: 'ปาปัวนิวกินี' },
+
+                // Africa
+                { value: 'ZA', label: 'แอฟริกาใต้' },
+                { value: 'EG', label: 'อียิปต์' },
+                { value: 'NG', label: 'ไนจีเรีย' },
+                { value: 'KE', label: 'เคนยา' },
+                { value: 'MA', label: 'โมร็อกโก' },
+                { value: 'TN', label: 'ตูนิเซีย' },
+                { value: 'GH', label: 'กานา' },
+                { value: 'ET', label: 'เอธิโอเปีย' }
             ]
         },
         apiErrors: {
@@ -135,7 +201,8 @@ const ALL_MESSAGES = {
             address: 'Address',
             addressPlaceholder: 'Enter your address',
             gender: 'Gender',
-            country: 'Country'
+            country: 'Country',
+            countryPlaceholder: 'Search or select country...'
         },
         options: {
             genderOptions: [
@@ -146,6 +213,7 @@ const ALL_MESSAGES = {
             ],
             countryOptions: [
                 { value: '', label: '-- Select Country --' },
+                // Asia
                 { value: 'TH', label: 'Thailand' },
                 { value: 'SG', label: 'Singapore' },
                 { value: 'MY', label: 'Malaysia' },
@@ -155,7 +223,72 @@ const ALL_MESSAGES = {
                 { value: 'MM', label: 'Myanmar' },
                 { value: 'KH', label: 'Cambodia' },
                 { value: 'LA', label: 'Laos' },
-                { value: 'BN', label: 'Brunei' }
+                { value: 'BN', label: 'Brunei' },
+                { value: 'JP', label: 'Japan' },
+                { value: 'KR', label: 'South Korea' },
+                { value: 'CN', label: 'China' },
+                { value: 'TW', label: 'Taiwan' },
+                { value: 'HK', label: 'Hong Kong' },
+                { value: 'IN', label: 'India' },
+                { value: 'PK', label: 'Pakistan' },
+                { value: 'BD', label: 'Bangladesh' },
+                { value: 'NP', label: 'Nepal' },
+                { value: 'LK', label: 'Sri Lanka' },
+                { value: 'AE', label: 'United Arab Emirates' },
+                { value: 'SA', label: 'Saudi Arabia' },
+                { value: 'IL', label: 'Israel' },
+                { value: 'TR', label: 'Turkey' },
+
+                // Europe
+                { value: 'GB', label: 'United Kingdom' },
+                { value: 'FR', label: 'France' },
+                { value: 'DE', label: 'Germany' },
+                { value: 'IT', label: 'Italy' },
+                { value: 'ES', label: 'Spain' },
+                { value: 'NL', label: 'Netherlands' },
+                { value: 'BE', label: 'Belgium' },
+                { value: 'CH', label: 'Switzerland' },
+                { value: 'SE', label: 'Sweden' },
+                { value: 'NO', label: 'Norway' },
+                { value: 'FI', label: 'Finland' },
+                { value: 'DK', label: 'Denmark' },
+                { value: 'PL', label: 'Poland' },
+                { value: 'AT', label: 'Austria' },
+                { value: 'IE', label: 'Ireland' },
+                { value: 'PT', label: 'Portugal' },
+                { value: 'GR', label: 'Greece' },
+                { value: 'CZ', label: 'Czech Republic' },
+                { value: 'HU', label: 'Hungary' },
+                { value: 'RO', label: 'Romania' },
+                { value: 'RU', label: 'Russia' },
+                { value: 'UA', label: 'Ukraine' },
+
+                // America
+                { value: 'US', label: 'United States' },
+                { value: 'CA', label: 'Canada' },
+                { value: 'MX', label: 'Mexico' },
+                { value: 'BR', label: 'Brazil' },
+                { value: 'AR', label: 'Argentina' },
+                { value: 'CL', label: 'Chile' },
+                { value: 'CO', label: 'Colombia' },
+                { value: 'PE', label: 'Peru' },
+                { value: 'VE', label: 'Venezuela' },
+
+                // Oceania
+                { value: 'AU', label: 'Australia' },
+                { value: 'NZ', label: 'New Zealand' },
+                { value: 'PG', label: 'Papua New Guinea' },
+
+                // Africa
+                { value: 'ZA', label: 'South Africa' },
+                { value: 'EG', label: 'Egypt' },
+                { value: 'NG', label: 'Nigeria' },
+                { value: 'KE', label: 'Kenya' },
+                { value: 'MA', label: 'Morocco' },
+                { value: 'TN', label: 'Tunisia' },
+                { value: 'GH', label: 'Ghana' },
+                { value: 'ET', label: 'Ethiopia' }
+
             ]
         },
         apiErrors: {
@@ -240,7 +373,8 @@ const ALL_MESSAGES = {
             address: 'Alamat',
             addressPlaceholder: 'Masukkan alamat Anda',
             gender: 'Jenis Kelamin',
-            country: 'Negara'
+            country: 'Negara',
+            countryPlaceholder: 'Cari atau pilih negara...'
         },
         options: {
             genderOptions: [
@@ -251,16 +385,82 @@ const ALL_MESSAGES = {
             ],
             countryOptions: [
                 { value: '', label: '-- Pilih Negara --' },
+                // Asia
                 { value: 'TH', label: 'Thailand' },
-                { value: 'SG', label: 'Singapura' },
+                { value: 'SG', label: 'Singapore' },
                 { value: 'MY', label: 'Malaysia' },
                 { value: 'ID', label: 'Indonesia' },
-                { value: 'PH', label: 'Filipina' },
+                { value: 'PH', label: 'Philippines' },
                 { value: 'VN', label: 'Vietnam' },
                 { value: 'MM', label: 'Myanmar' },
-                { value: 'KH', label: 'Kamboja' },
+                { value: 'KH', label: 'Cambodia' },
                 { value: 'LA', label: 'Laos' },
-                { value: 'BN', label: 'Brunei' }
+                { value: 'BN', label: 'Brunei' },
+                { value: 'JP', label: 'Japan' },
+                { value: 'KR', label: 'South Korea' },
+                { value: 'CN', label: 'China' },
+                { value: 'TW', label: 'Taiwan' },
+                { value: 'HK', label: 'Hong Kong' },
+                { value: 'IN', label: 'India' },
+                { value: 'PK', label: 'Pakistan' },
+                { value: 'BD', label: 'Bangladesh' },
+                { value: 'NP', label: 'Nepal' },
+                { value: 'LK', label: 'Sri Lanka' },
+                { value: 'AE', label: 'United Arab Emirates' },
+                { value: 'SA', label: 'Saudi Arabia' },
+                { value: 'IL', label: 'Israel' },
+                { value: 'TR', label: 'Turkey' },
+
+                // Europe
+                { value: 'GB', label: 'United Kingdom' },
+                { value: 'FR', label: 'France' },
+                { value: 'DE', label: 'Germany' },
+                { value: 'IT', label: 'Italy' },
+                { value: 'ES', label: 'Spain' },
+                { value: 'NL', label: 'Netherlands' },
+                { value: 'BE', label: 'Belgium' },
+                { value: 'CH', label: 'Switzerland' },
+                { value: 'SE', label: 'Sweden' },
+                { value: 'NO', label: 'Norway' },
+                { value: 'FI', label: 'Finland' },
+                { value: 'DK', label: 'Denmark' },
+                { value: 'PL', label: 'Poland' },
+                { value: 'AT', label: 'Austria' },
+                { value: 'IE', label: 'Ireland' },
+                { value: 'PT', label: 'Portugal' },
+                { value: 'GR', label: 'Greece' },
+                { value: 'CZ', label: 'Czech Republic' },
+                { value: 'HU', label: 'Hungary' },
+                { value: 'RO', label: 'Romania' },
+                { value: 'RU', label: 'Russia' },
+                { value: 'UA', label: 'Ukraine' },
+
+                // America
+                { value: 'US', label: 'United States' },
+                { value: 'CA', label: 'Canada' },
+                { value: 'MX', label: 'Mexico' },
+                { value: 'BR', label: 'Brazil' },
+                { value: 'AR', label: 'Argentina' },
+                { value: 'CL', label: 'Chile' },
+                { value: 'CO', label: 'Colombia' },
+                { value: 'PE', label: 'Peru' },
+                { value: 'VE', label: 'Venezuela' },
+
+                // Oceania
+                { value: 'AU', label: 'Australia' },
+                { value: 'NZ', label: 'New Zealand' },
+                { value: 'PG', label: 'Papua New Guinea' },
+
+                // Africa
+                { value: 'ZA', label: 'South Africa' },
+                { value: 'EG', label: 'Egypt' },
+                { value: 'NG', label: 'Nigeria' },
+                { value: 'KE', label: 'Kenya' },
+                { value: 'MA', label: 'Morocco' },
+                { value: 'TN', label: 'Tunisia' },
+                { value: 'GH', label: 'Ghana' },
+                { value: 'ET', label: 'Ethiopia' }
+
             ]
         },
         apiErrors: {
