@@ -150,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'meta-description': 'Crystalfall is a free online hack’n’slash Action RPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
             'og-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
             'og-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
+            'twitter-title': 'Crystalfall – Free Online Classic ARPG on PC | Pre-Register',
+            'twitter-description': 'Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game'
         },
         th: {
@@ -185,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'meta-description': 'Crystalfall เกมออนไลน์ Action RPG แนว hack’n’slash เล่นฟรีบน PC มาสำรวจดันเจี้ยน พร้อมระบบบิลด์ที่หลากหลาย และพัฒนาตัวละครในโลก steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลพิเศษ!',
             'og-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
             'og-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
+            'twitter-title': 'Crystalfall – เกมออนไลน์ ARPG สุดคลาสสิก เล่นฟรี บน PC | Pre-Register',
+            'twitter-description': 'Crystalfall เกมออนไลน์ฟรีแนว Classic Hack’n’Slash ARPG บน PC พบกับความหลากหลายในการสร้างตัวละคร ดันเจี้ยน และการพัฒนาตัวละครในโลก Steampunk ลงทะเบียนล่วงหน้าเพื่อรับรางวัลสุดพิเศษ',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, เกม ARPG เล่นฟรี, Action RPG, Hack and Slash, Steampunk ARPG, โลก Steampunk, เกมแฟนตาซีดาร์ก, ตะลุยดันเจี้ยน, ดันเจี้ยนแบบสุ่ม, เกม ARPG เน้นลูท, ระบบสกิลพาสซีฟ, บิลด์ตัวละครแบบผสมผสาน, ความหลากหลายของบิลด์, ระบบอัปเกรดพลัง, เกมบน Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
         },
         id: {
@@ -220,6 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'meta-description': 'Crystalfall adalah game Action RPG hack’n’slash online gratis di PC, dengan keragaman build tanpa batas, penjelajahan dungeon, dan perkembangan karakter yang mendalam di dalam dunia steampunk. Pre-Registrasi sekarang untuk mendapatkan hadiah eksklusif.',
             'og-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
             'og-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
+            'twitter-title': 'Crystalfall – ARPG Klasik Online Gratis di PC | Pre-Registrasi',
+            'twitter-description': 'Crystalfall adalah game ARPG klasik hack’n’slash online gratis di PC, dengan ragam build tanpa batas, dungeon crawling yang seru, serta progres karakter yang mendalam dalam dunia steampunk.',
             'meta-keywords': 'Crystalfall, Crystalfall ARPG, Crystalfall PC game, Game Online Gratis, ARPG Free-to-Play, Action RPG, Hack & Slash, Dungeon Crawler, Loot-driven ARPG, Steampunk ARPG, Dunia Steampunk, Dark Fantasy, Sistem Talent Pasif, Build Karakter Sinergi, Variasi Build Tanpa Batas, Dungeon Acak, Sistem Upgrade Kekuatan, Game PC Steam, Path of Exile, Diablo, Last Epoch, Torchlight'
         }
     };
