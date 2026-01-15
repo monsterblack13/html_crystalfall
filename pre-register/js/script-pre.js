@@ -586,8 +586,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log(MESSAGES.console.parameters, paramsData);
 
         // ส่งข้อมูลด้วย fetch GET
+        // fetch(fullUrl, {
+        //     method: 'GET'
+        // })
+
         fetch(fullUrl, {
-            method: 'GET'
+            method: 'GET',
+            mode: 'cors',  // อนุญาต CORS requests
+            headers: {
+                'Accept': 'application/json',
+            }
         })
             .then(response => {
                 console.log(MESSAGES.console.responseStatus);

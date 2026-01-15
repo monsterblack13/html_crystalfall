@@ -59,7 +59,7 @@ const ALL_MESSAGES = {
             code4: 'ข้อมูลที่ส่งไม่ครบถ้วน กรุณาลองใหม่อีกครั้ง',
             code9: 'ข้อมูลที่ส่งมายังไม่ถูกต้อง กำลังตรวจสอบรายละเอียด...',
             unknown: 'เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ กรุณาลองใหม่อีกครั้ง',
-            connection: 'เกิดข้อผิดพลาดในการเชื่อมต่อ (อาจเป็นปัญหา CORS)\nกรุณาลองใหม่อีกครั้ง'
+            connection: 'An unexpected error . Our team has been notified and is currently investigating the issue.'
         },
         freeTextErrors: {
             code0: 'ข้อมูลถูกต้อง',
@@ -165,7 +165,7 @@ const ALL_MESSAGES = {
             code4: 'Incomplete data. Please try again',
             code9: 'Invalid data. Checking details...',
             unknown: 'Unknown error occurred. Please try again',
-            connection: 'Connection error (possibly CORS issue)\nPlease try again'
+            connection: 'An unexpected error . Our team has been notified and is currently investigating the issue.'
         },
         freeTextErrors: {
             code0: 'Data is valid',
@@ -271,7 +271,7 @@ const ALL_MESSAGES = {
             code4: 'Data tidak lengkap. Silakan coba lagi',
             code9: 'Data tidak valid. Memeriksa detail...',
             unknown: 'Terjadi kesalahan yang tidak diketahui. Silakan coba lagi',
-            connection: 'Kesalahan koneksi (mungkin masalah CORS)\nSilakan coba lagi'
+            connection: 'An unexpected error . Our team has been notified and is currently investigating the issue.'
         },
         freeTextErrors: {
             code0: 'Data valid',
@@ -377,7 +377,7 @@ const ALL_MESSAGES = {
             code4: 'Hindi kumpleto ang data. Subukan muli',
             code9: 'Hindi valid ang data. Sinusuri ang mga detalye...',
             unknown: 'May naganap na hindi kilalang error. Subukan muli',
-            connection: 'Error sa koneksyon (posibleng problema sa CORS)\nSubukan muli'
+            connection: 'An unexpected error . Our team has been notified and is currently investigating the issue.'
         },
         freeTextErrors: {
             code0: 'Valid ang data',
