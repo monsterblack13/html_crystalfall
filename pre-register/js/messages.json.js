@@ -79,6 +79,7 @@ const ALL_MESSAGES = {
             default: 'ข้อมูลไม่ถูกต้อง'
         },
         validation: {
+            emailRequired: 'กรุณากรอกอีเมล',
             phoneRequired: 'กรุณากรอกเบอร์มือถือ',
             phoneInvalid: 'กรอกเบอร์มือถือให้ถูกต้อง'
         },
@@ -184,6 +185,7 @@ const ALL_MESSAGES = {
             default: 'Invalid data'
         },
         validation: {
+            emailRequired: 'Please enter email',
             phoneRequired: 'Please enter phone number',
             phoneInvalid: 'Please enter a valid mobile phone number.'
         },
@@ -289,6 +291,7 @@ const ALL_MESSAGES = {
             default: 'Data tidak valid'
         },
         validation: {
+            emailRequired: 'Silakan masukkan email',
             phoneRequired: 'Silakan masukkan nomor telepon',
             phoneInvalid: 'Silakan masukkan nomor ponsel yang benar.'
         },

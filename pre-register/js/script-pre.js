@@ -1,5 +1,6 @@
 // ======================================
 // ฟังก์ชันสร้างฟอร์มอัตโนมัติจาก CONFIG
+// update 15/01/2026
 // ======================================
 
 // ฟังก์ชัน escape HTML เพื่อป้องกัน XSS
@@ -126,6 +127,7 @@ function generateForm() {
                         value="${defaultValue}"
                         ${maxLength}
                         ${field.required ? 'required' : ''}
+                        ${field.type === 'email' ? 'autocapitalize="none" spellcheck="false"' : ''}
                     >
                     <span class="${prefix}error-message" id="${prefix}${field.errorId}"></span>
                 </div>
@@ -481,6 +483,27 @@ document.addEventListener('DOMContentLoaded', async function () {
                     }
                 });
             }
+        } else if (field.type === 'email') {
+            // Email - validation และลบ error เมื่อกรอกถูกต้อง
+            input.addEventListener('blur', function () {
+                if (this.value === '') {
+                    if (field.required) {
+                        showError(this, errorElement, MESSAGES.validation.emailRequired || 'Please enter email');
+                    } else {
+                        clearError(this, errorElement);
+                    }
+                } else if (!validateEmail(this.value)) {
+                    showError(this, errorElement, MESSAGES.freeTextErrors.code3 || 'Invalid email format');
+                } else {
+                    clearError(this, errorElement);
+                }
+            });
+
+            input.addEventListener('input', function () {
+                if (this.value !== '' && validateEmail(this.value)) {
+                    clearError(this, errorElement);
+                }
+            });
         } else if (field.type === 'checkbox') {
             // Checkbox - ลบ error เมื่อ checked
             input.addEventListener('change', function () {
@@ -538,6 +561,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                 // Input fields อื่นๆ - ใช้ค่าจาก input
                 const input = formInputs[fieldKey];
                 value = input ? input.value : '';
+
+                // หากเป็น email ให้แปลงเป็นตัวพิมพ์เล็กก่อนส่งไป API
+                if (field.type === 'email' && value && value !== '-') {
+                    value = value.toLowerCase();
+                    console.log(`📧 ${fieldKey} (Normalized to lowercase): ${value}`);
+                }
             }
 
             // ถ้า field ไม่ใช่ required และค่าว่าง ให้ส่ง '-' แทน
