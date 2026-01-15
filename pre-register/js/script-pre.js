@@ -188,24 +188,28 @@ function autoFillFromIPData(ipData, formInputs) {
 
         // เซ็ตค่าตาม autoFillFrom
         let value = '';
-        if (field.autoFillFrom === 'countryCode' && ipData.countryCode) {
-            value = ipData.countryCode;
+        if (field.autoFillFrom === 'countryCode') {
+            // ดึงค่ามา (ถ้า detect ไม่ผ่าน ให้ใช้ empty string หรือ fallbackDefault ถ้ามี)
+            value = (ipData && ipData.countryCode) ? ipData.countryCode : (field.fallbackDefault || '');
 
             // ถ้ามี allowedCountries ให้เช็คว่าประเทศที่ detect มาอยู่ในลิสต์หรือไม่
             if (field.allowedCountries && Array.isArray(field.allowedCountries)) {
-                if (!field.allowedCountries.includes(value)) {
+                const upperValue = value.toUpperCase();
+                const upperAllowed = field.allowedCountries.map(c => c.toUpperCase());
+
+                if (!upperAllowed.includes(upperValue)) {
                     // ถ้าไม่อยู่ในลิสต์ ใช้ fallbackDefault แทน
                     value = field.fallbackDefault || '';
-                    console.log(`⚠️ Country ${ipData.countryCode} ไม่อยู่ในรายการที่อนุญาต, ใช้ fallback: ${value}`);
+                    console.log(`⚠️ Country ${upperValue} ไม่อยู่ในรายการที่อนุญาต, ใช้ fallback: ${value}`);
                 } else {
-                    console.log(`✅ Country ${value} อยู่ในรายการที่อนุญาต`);
+                    console.log(`✅ Country ${upperValue} อยู่ในรายการที่อนุญาต`);
                 }
             }
-        } else if (field.autoFillFrom === 'countryName' && ipData.countryName) {
+        } else if (field.autoFillFrom === 'countryName' && ipData && ipData.countryName) {
             value = ipData.countryName;
         }
 
-        if (value !== undefined && value !== null) {
+        if (value !== undefined && value !== null && value !== '') {
             // ถ้าเป็น hidden field
             if (field.type === 'hidden') {
                 // อัปเดตค่าใน CONFIG และ input element
@@ -225,11 +229,18 @@ function autoFillFromIPData(ipData, formInputs) {
                     const optionExists = Array.from(input.options).some(opt => opt.value === value);
                     if (!optionExists) {
                         value = field.fallbackDefault || '';
-                        console.log(`⚠️ Option ${ipData.countryCode} ไม่พบใน dropdown, ใช้ fallback: ${value}`);
+                        console.log(`⚠️ Option ${value} ไม่พบใน dropdown, ใช้ fallback: ${value}`);
                     }
                 }
 
-                input.value = value;
+                // ถ้าเป็น tel field และใช้ international phone ให้เซ็ต country ใน ITI ด้วย
+                if (field.type === 'tel' && intlTelInputInstances[fieldKey]) {
+                    intlTelInputInstances[fieldKey].setCountry(value);
+                    console.log(`📞 Set ITI Country ${fieldKey}: ${value}`);
+                } else {
+                    input.value = value;
+                }
+
                 console.log(`📍 Auto-fill ${fieldKey}: ${value}`);
 
                 // Trigger change event

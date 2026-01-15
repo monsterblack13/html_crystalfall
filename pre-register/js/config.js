@@ -49,15 +49,20 @@ const CONFIG = {
             intlPhoneOptions: {
                 initialCountry: '', // ตรวจจับอัตโนมัติจาก IP
                 preferredCountries: ['th', 'sg', 'my', 'id', 'ph', 'vn']
-            }
+            },
+            // Auto-fill จาก IP Detection (th, sg, my, id, ph, vn; default sg)
+            autoFillFrom: 'countryCode',
+            allowedCountries: ['TH', 'SG', 'MY', 'ID', 'PH', 'VN'],
+            fallbackDefault: 'SG'
         },
 
-        // freeText3 - 🤖 Auto-generated for freeText2
-        // Country Code from freeText2 (International Phone Input)
+        // freeText3 - Auto-fill จาก IP Detection (th, sg, my, id, ph, vn; default sg)
         freeText3: {
             type: 'hidden',
-            value: '',  // จะถูกอัปเดตโดย script.js อัตโนมัติ
-            _linkedTo: 'freeText2'
+            value: '',
+            autoFillFrom: 'countryCode',
+            allowedCountries: ['TH', 'SG', 'MY', 'ID', 'PH', 'VN'],
+            fallbackDefault: 'SG'
         },
 
         // freeText4
