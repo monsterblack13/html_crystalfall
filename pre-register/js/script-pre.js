@@ -271,9 +271,8 @@ function findCountryFieldKey(telFieldKey) {
     }
 
     // 2. เช็ค field อื่นๆ ที่อาจจะเป็น country target
-    // ในโปรเจกต์นี้คือ freeText3 และ freeText5
+    // ในโปรเจกต์นี้คือ freeText3 (สำหรับ dropdown)
     if (CONFIG.fields['freeText3']) return 'freeText3';
-    if (CONFIG.fields['freeText5']) return 'freeText5';
 
     // 3. เช็ค field ถัดไป - ถ้าเป็น hidden field
     const nextFieldKey = fieldKeys[telFieldIndex + 1];
@@ -336,8 +335,8 @@ function initializeInternationalPhone(formInputs) {
 
                 const countryCode = countryData.iso2.toUpperCase();
 
-                // อัปเดตทุกฟิลด์ที่ต้องการค่า countryCode
-                const countryTargets = ['freeText3', 'freeText5'];
+                // อัปเดตทุกฟิลด์ที่ต้องการค่า countryCode (ยึดตามที่ผู้ใช้เลือก)
+                const countryTargets = ['freeText3'];
 
                 // และลองหาฟิลด์ที่ linked อัตโนมัติด้วย (เผื่อมีชื่ออื่น)
                 const autoLinkedKey = findCountryFieldKey(fieldKey);
