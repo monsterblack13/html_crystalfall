@@ -181,7 +181,7 @@ async function fetchIPLocation() {
 // ======================================
 
 function autoFillFromIPData(ipData, formInputs) {
-    if (!ipData) return;
+    // Note: We don't return early if !ipData so that fallbackDefault can still be applied
 
     Object.keys(CONFIG.fields).forEach(fieldKey => {
         const field = CONFIG.fields[fieldKey];
@@ -270,12 +270,16 @@ function findCountryFieldKey(telFieldKey) {
         }
     }
 
-    // 2. เช็ค field ถัดไป - ถ้าเป็น hidden field และมี value เป็น '' (empty)
-    // แสดงว่าน่าจะเป็น auto-generated field สำหรับ country code
+    // 2. เช็ค field อื่นๆ ที่อาจจะเป็น country target
+    // ในโปรเจกต์นี้คือ freeText3 และ freeText5
+    if (CONFIG.fields['freeText3']) return 'freeText3';
+    if (CONFIG.fields['freeText5']) return 'freeText5';
+
+    // 3. เช็ค field ถัดไป - ถ้าเป็น hidden field
     const nextFieldKey = fieldKeys[telFieldIndex + 1];
     if (nextFieldKey) {
         const nextField = CONFIG.fields[nextFieldKey];
-        if (nextField.type === 'hidden' && (nextField.value === '' || nextField.value === undefined)) {
+        if (nextField.type === 'hidden') {
             return nextFieldKey;
         }
     }
@@ -328,20 +332,31 @@ function initializeInternationalPhone(formInputs) {
             // อัปเดต hidden field ของ country code
             const updateCountryCode = () => {
                 const countryData = iti.getSelectedCountryData();
-                const countryFieldKey = findCountryFieldKey(fieldKey);
+                if (!countryData || !countryData.iso2) return;
 
-                if (countryFieldKey && CONFIG.fields[countryFieldKey]) {
-                    const countryCode = countryData.iso2.toUpperCase();
-                    CONFIG.fields[countryFieldKey].value = countryCode;
+                const countryCode = countryData.iso2.toUpperCase();
 
-                    // อัปเดต hidden input element ด้วย
-                    const countryInput = formInputs[countryFieldKey];
-                    if (countryInput) {
-                        countryInput.value = countryCode;
-                    }
+                // อัปเดตทุกฟิลด์ที่ต้องการค่า countryCode
+                const countryTargets = ['freeText3', 'freeText5'];
 
-                    console.log(`📞 อัปเดต ${countryFieldKey}: ${countryCode}`);
+                // และลองหาฟิลด์ที่ linked อัตโนมัติด้วย (เผื่อมีชื่ออื่น)
+                const autoLinkedKey = findCountryFieldKey(fieldKey);
+                if (autoLinkedKey && !countryTargets.includes(autoLinkedKey)) {
+                    countryTargets.push(autoLinkedKey);
                 }
+
+                countryTargets.forEach(targetKey => {
+                    if (CONFIG.fields[targetKey]) {
+                        CONFIG.fields[targetKey].value = countryCode;
+
+                        // อัปเดต hidden input element ใน DOM ด้วย
+                        const targetInput = formInputs[targetKey];
+                        if (targetInput) {
+                            targetInput.value = countryCode;
+                        }
+                        console.log(`📞 Sync ${targetKey} from phone dropdown: ${countryCode}`);
+                    }
+                });
             };
 
             // อัปเดตทันทีเมื่อ initialize
@@ -392,9 +407,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // ⭐ ดึงข้อมูลจาก IP Detection API และ auto-fill
     const ipData = await fetchIPLocation();
-    if (ipData) {
-        autoFillFromIPData(ipData, formInputs);
-    }
+    autoFillFromIPData(ipData, formInputs);
 
     // ตรวจสอบอีเมล
     function validateEmail(email) {
