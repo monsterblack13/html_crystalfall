@@ -663,8 +663,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     }
 
                     iframe.src = iframeSrc;
-                    iframe.style.width = '10px';
-                    iframe.style.height = '10px';
+                    iframe.style.width = '1px';
+                    iframe.style.height = '1px';
                     iframe.style.border = 'none';
                     iframe.style.background = '#1d1c24';
 
