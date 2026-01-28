@@ -438,13 +438,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update canonical and og:url to match hreflang structure
         const baseUrl = "https://crystalfall.playpark.com/pre-register";
-        const newUrl = lang === 'en' ? baseUrl : `${baseUrl}?lang=${lang}`;
+        const newUrl = `${baseUrl}?lang=${lang}`;
 
         const canonical = document.querySelector('link[rel="canonical"]');
         if (canonical) canonical.href = newUrl;
 
-        const ogUrl = document.querySelector('meta[property="og:url"]');
+        const ogUrl = document.getElementById('og-url');
         if (ogUrl) ogUrl.content = newUrl;
+
+        const twitterUrl = document.getElementById('twitter-url');
+        if (twitterUrl) twitterUrl.content = newUrl;
     }
 
     let selectedLang = getInitialLang();
@@ -472,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Milestone Logic
     // const MILESTONE_API_URL = 'https://secure2.playpark.com/milestone/MileStone.ashx?eventid=bTRqWS9aSTdDTkZuME5FTEhsYXBFQT09';
     // Manual value if API is disabled or fails
-    const MANUAL_MILESTONE = 54338;
+    const MANUAL_MILESTONE = 59729;
 
     function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
