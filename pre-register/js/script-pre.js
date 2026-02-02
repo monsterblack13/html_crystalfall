@@ -632,6 +632,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 // ตรวจสอบ code ที่ได้รับจาก API
                 if (data.code === 0) {
                     // ลงทะเบียนสำเร็จ
+                    localStorage.setItem('crystalfall_registered', 'true');
                     console.log(MESSAGES.console.success);
                     form.style.display = 'none';
                     const successMessage = document.getElementById(`${prefix}successMessage`);
@@ -812,5 +813,17 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         });
     }
-});
 
+    // ⭐ Auto show pre-register modal on every visit (if not already registered)
+    const isRegistered = localStorage.getItem('crystalfall_registered');
+    if (!isRegistered) {
+        const preRegModalEl = document.getElementById('preRegModal');
+        if (preRegModalEl) {
+            // Delay slightly to ensure form is fully ready and for smoother entry
+            setTimeout(() => {
+                const modal = bootstrap.Modal.getOrCreateInstance(preRegModalEl);
+                modal.show();
+            }, 1000); // 1s delay for better UX
+        }
+    }
+});

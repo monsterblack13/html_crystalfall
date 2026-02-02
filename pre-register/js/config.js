@@ -72,7 +72,7 @@ const CONFIG = {
             required: true,
             htmlId: 'policy',
             errorId: 'policyError',
-            defaultValue: 'false',
+            defaultValue: false,
             trueValue: 'true',
             falseValue: 'false'
         },
