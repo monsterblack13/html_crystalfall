@@ -814,16 +814,21 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 
-    // ⭐ Auto show pre-register modal on every visit (if not already registered)
+    // ⭐ Auto show pre-register modal once per day (if not already registered)
     const isRegistered = localStorage.getItem('crystalfall_registered');
     if (!isRegistered) {
-        const preRegModalEl = document.getElementById('preRegModal');
-        if (preRegModalEl) {
-            // Delay slightly to ensure form is fully ready and for smoother entry
-            setTimeout(() => {
-                const modal = bootstrap.Modal.getOrCreateInstance(preRegModalEl);
-                modal.show();
-            }, 1000); // 1s delay for better UX
+        const lastShowDate = localStorage.getItem('crystalfall_last_popup_date');
+        const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+
+        if (lastShowDate !== today) {
+            const preRegModalEl = document.getElementById('preRegModal');
+            if (preRegModalEl) {
+                setTimeout(() => {
+                    const modal = bootstrap.Modal.getOrCreateInstance(preRegModalEl);
+                    modal.show();
+                    localStorage.setItem('crystalfall_last_popup_date', today);
+                }, 1000); // 1s delay for better UX
+            }
         }
     }
 });

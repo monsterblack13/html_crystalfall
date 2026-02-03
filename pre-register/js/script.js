@@ -565,24 +565,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Auto trigger Modal on scroll
-    const triggerEl = document.getElementById('ctf-rewards-play');
-    if (triggerEl) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Show modal
-                    const modalEl = document.getElementById('videoModal');
-                    if (modalEl) {
-                        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-                        modal.show();
-                        // Unobserve to trigger only once
-                        observer.unobserve(entry.target);
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
 
-        observer.observe(triggerEl);
-    }
 });
