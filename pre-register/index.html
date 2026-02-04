@@ -81,23 +81,65 @@
     <script>
         (function () {
             const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang');
-            if (lang && ['th', 'en', 'id'].includes(lang)) {
-                const baseUrl = "https://crystalfall.playpark.com/pre-register";
-                const newUrl = baseUrl + "?lang=" + lang;
+            const lang = urlParams.get('lang') || 'en';
 
-                // Update Canonical
-                const canonical = document.querySelector('link[rel="canonical"]');
-                if (canonical) canonical.href = newUrl;
+            const seoData = {
+                en: {
+                    title: "Crystalfall – Free Online Classic ARPG on PC | Pre-Register",
+                    description: "Crystalfall is a free online classic hack’n’slash ARPG on PC, featuring endless build diversity, dungeon crawling, and deep character progression in a steampunk world. Pre-register now for exclusive rewards.",
+                    keywords: "Crystalfall, Crystalfall ARPG, Crystalfall PC game, Free Online ARPG, Free-to-play ARPG, Action RPG, Hack & Slash, Dungeon Crawler, Dungeon crawl, Loot-driven ARPG, Steampunk ARPG, Steampunk world, Dark Fantasy, Passive talents, Synergy build, Build diversity, Power upgrades, Path of Exile, Diablo, Last Epoch, Torchlight, Steam game"
+                },
+                th: {
+                    title: "Crystalfall – เกม ARPG สุดคลาสสิกบน PC | ลงทะเบียนล่วงหน้า",
+                    description: "Crystalfall เกมออนไลน์ Action RPG สไตล์ Hack’n’Slash สุดคลาสสิกบน PC พบกับระบบการสร้างตัวละครที่หลากหลาย ตะลุยดันเจี้ยน และโลกสไตล์ Steampunk ลงทะเบียนล่วงหน้าเพื่อรับของรางวัลสุดพิเศษ",
+                    keywords: "Crystalfall, Crystalfall ARPG, Crystalfall PC, เกม ARPG ฟรี, เกม Hack & Slash, เกม PC ใหม่, ลงทะเบียนล่วงหน้า, PlayPark"
+                },
+                id: {
+                    title: "Crystalfall – ARPG Klasik Online Gratis di PC | Pra-Registrasi",
+                    description: "Crystalfall adalah game online action RPG hack’n’slash klasik di PC, menampilkan build karakter yang bervariasi, dungeon crawling, dan dunia steampunk yang mendalam. Daftar sekarang untuk hadiah eksklusif.",
+                    keywords: "Crystalfall, Crystalfall ARPG, Crystalfall PC, ARPG Online Gratis, Hack & Slash, Dungeon Crawler, Steampunk, Pra-Registrasi, PlayPark"
+                }
+            };
 
-                // Update Open Graph
-                const ogUrl = document.getElementById('og-url');
-                if (ogUrl) ogUrl.content = newUrl;
+            const data = seoData[lang] || seoData.en;
+            const baseUrl = "https://crystalfall.playpark.com/pre-register";
+            const newUrl = baseUrl + (lang !== 'en' ? "?lang=" + lang : "");
 
-                // Update Twitter
-                const twitterUrl = document.getElementById('twitter-url');
-                if (twitterUrl) twitterUrl.content = newUrl;
-            }
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update Page Title
+            document.title = data.title;
+            const pageTitle = document.getElementById('page-title');
+            if (pageTitle) pageTitle.innerText = data.title;
+
+            // Update Meta Description
+            const metaDesc = document.getElementById('meta-description');
+            if (metaDesc) metaDesc.content = data.description;
+
+            // Update Meta Keywords
+            const metaKeywords = document.getElementById('meta-keywords');
+            if (metaKeywords) metaKeywords.content = data.keywords;
+
+            // Update Rel Canonical
+            const canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) canonical.href = newUrl;
+
+            // Update Open Graph
+            const ogTitle = document.getElementById('og-title');
+            if (ogTitle) ogTitle.content = data.title;
+            const ogDesc = document.getElementById('og-description');
+            if (ogDesc) ogDesc.content = data.description;
+            const ogUrl = document.getElementById('og-url');
+            if (ogUrl) ogUrl.content = newUrl;
+
+            // Update Twitter
+            const twitterTitle = document.getElementById('twitter-title');
+            if (twitterTitle) twitterTitle.content = data.title;
+            const twitterDesc = document.getElementById('twitter-description');
+            if (twitterDesc) twitterDesc.content = data.description;
+            const twitterUrl = document.getElementById('twitter-url');
+            if (twitterUrl) twitterUrl.content = newUrl;
         })();
     </script>
 
@@ -288,6 +330,7 @@
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
+                    <h2 class="visually-hidden">Pre-Registration Rewards and Milestones</h2>
                     <img src="images/reward-title.png" class="img-fluid mb-4" alt="Crystalfall Pre-Registration Rewards"
                         id="ctf-reward-title">
                     <p class="description-text" id="ctf-reward-description">Unlock exclusive rewards for the entire
@@ -302,8 +345,12 @@
                     </div>
                 </div>
                 <div class="col-12 mx-auto text-center mb-5">
-                    <img src="images/reward-1.png" class="img-fluid d-none d-md-block" alt="" id="ctf-reward-pc">
-                    <img src="images/reward-1-mb.png" class="img-fluid d-block d-md-none" alt="" id="ctf-reward-mobile">
+                    <img src="images/reward-1.png" class="img-fluid d-none d-md-block"
+                        alt="Crystalfall Milestone Rewards 50,000 to 500,000 Registers" id="ctf-reward-pc"
+                        loading="lazy">
+                    <img src="images/reward-1-mb.png" class="img-fluid d-block d-md-none"
+                        alt="Crystalfall Milestone Rewards 50,000 to 500,000 Registers" id="ctf-reward-mobile"
+                        loading="lazy">
 
                     <!-- video reward -->
                     <!-- <div class="row justify-content-center">
@@ -329,7 +376,8 @@
                         <a href="#" target="_blank" rel="noopener noreferrer" id="ctf-rewards-steam-link"><img
                                 src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-rewards-steam"></a>
                         <p class="description-text" id="ctf-rewards-notice">Rewards are available for
-                            pre-registered & wishlist users only. Users who already wishlisted Crystalfall on Steam only
+                            pre-registered &amp; wishlist users only. Users who already wishlisted Crystalfall on Steam
+                            only
                             need to pre-register.</p>
                     </div>
                 </div>
@@ -348,8 +396,9 @@
 
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
+                    <h2 class="visually-hidden">Crystalfall Class and Character Introduction</h2>
                     <img src="images/class-intro-title.png" class="img-fluid mb-4"
-                        alt="Crystalfall Classes and Characters" id="ctf-class-intro-title">
+                        alt="Crystalfall Classes and Characters" id="ctf-class-intro-title" loading="lazy">
                     <p class="description-text" id="ctf-class-description">Choose your class and survive in
                         a world destroyed by a
                         mysterious asteroid,
@@ -365,16 +414,19 @@
             <div class="char-fl-btn">
                 <div class="d-flex flex-column gap-3">
                     <button class="btn p-0 character-btn active" data-char="0">
-                        <img src="images/character1.png" alt="" class="img-fluid" id="char-knight">
+                        <img src="images/character1.png" alt="Crystalfall Knight Class" class="img-fluid"
+                            id="char-knight" loading="lazy">
                         <!-- <video class="char-video" muted loop playsinline>
                             <source src="images/character1.mp4" type="video/mp4">
                         </video> -->
                     </button>
                     <button class="btn p-0 character-btn" data-char="1">
-                        <img src="images/character2.png" alt="" class="img-fluid" id="char-gunner">
+                        <img src="images/character2.png" alt="Crystalfall Gunner Class" class="img-fluid"
+                            id="char-gunner" loading="lazy">
                     </button>
                     <button class="btn p-0 character-btn" data-char="2">
-                        <img src="images/character3.png" alt="" class="img-fluid" id="char-techo">
+                        <img src="images/character3.png" alt="Crystalfall Technomancer Class" class="img-fluid"
+                            id="char-techo" loading="lazy">
                     </button>
                 </div>
             </div>
@@ -497,8 +549,9 @@
             <div class="row">
                 <div class="col-10 col-md-8 mx-auto text-center mb-5">
                     <!-- <p style="color: #CD8033; font-size: 16px;">Class / Character</p> -->
+                    <h2 class="visually-hidden">Crystalfall Gameplay and Official Trailers</h2>
                     <img src="images/trailer-title.png" class="img-fluid mb-4" alt="Crystalfall Gameplay Trailers"
-                        id="ctf-trailer-title">
+                        id="ctf-trailer-title" loading="lazy">
                     <p class="description-text" id="ctf-trailer-description">Kickstart your adventure in a
                         classic hack ‘n’ slash Action
                         RPG—featuring randomized dungeons, procedural skills, and an endless endgame.</p>
@@ -558,7 +611,7 @@
 
 
         </div>
-        </div>
+
     </section>
 
     <!-- Divider Section -->
@@ -567,18 +620,19 @@
     <!-- section5 -->
     <section class="section-dark-bg" id="sec-footer">
         <div class="container section-padding" id="sec-footer-rate">
+            <h2 class="visually-hidden">Crystalfall Footer</h2>
             <div class="row">
-                <div class="col-10 col-md-8 mx-auto text-center">
-                    <img src="images/main-logo.png" alt="Crystalfall Logo" class="mb-4 img-fluid">
+                <div class="col-10 col-md-8 mx-auto text-center mb-5">
+                    <img src="images/main-logo.png" alt="Crystalfall Logo" class="mb-4 img-fluid" loading="lazy">
                     <!-- <h1 class="hero-title mb-2">CLASSIC HACK ‘N’ SLASH ARPG</h1> -->
                     <!-- <p class="hero-subtitle mb-4" id="ctf-footer-subtitle">CLASSIC HACK ‘N’ SLASH ARPG<br>WITH ENDLESS
                         BUILD DIVERSITY</p> -->
                     <img src="images/main-title-en.png" id="ctf-footer-text-img" class="img-fluid mb-4"
-                        alt="Crystalfall: Classic ARPG">
+                        alt="Crystalfall: Classic ARPG" loading="lazy">
                     <div class="mb-4">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#preRegModal"><img
                                 src="images/pre-regis-btn.png" class="img-fluid p-1" alt="Pre-Register"
-                                id="ctf-footer-preRegModal"></a>
+                                id="ctf-footer-preRegModal" loading="lazy"></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" id="ctf-footer-steam-link"><img
                                 src="images/steam.png" class="img-fluid p-1" alt="Steam" id="ctf-footer-steam"></a>
                     </div>
@@ -593,26 +647,27 @@
                     <!-- social -->
                     <div class="d-flex justify-content-center gap-3 mt-4">
                         <a href="#" target="_blank" rel="noopener noreferrer" title="Discord"
-                            id="ctf-footer-link-discord"><img src="images/discord.png" class="img-fluid" alt="Discord"
-                                id="ctf-footer-social-discord"></a>
+                            id="ctf-footer-link-discord"><img src="images/discord.png" class="img-fluid"
+                                alt="Crystalfall Discord" id="ctf-footer-social-discord" loading="lazy"></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" title="facebook"
                             id="ctf-footer-link-facebook"><img src="images/facebook.png" class="img-fluid"
-                                alt="Facebook" id="ctf-footer-social-facebook"></a>
+                                alt="Crystalfall Facebook" id="ctf-footer-social-facebook" loading="lazy"></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" title="reddit"
-                            id="ctf-footer-link-reddit"><img src="images/reddit.png" class="img-fluid" alt="Reddit"
-                                id="ctf-footer-social-reddit"></a>
+                            id="ctf-footer-link-reddit"><img src="images/reddit.png" class="img-fluid"
+                                alt="Crystalfall Reddit" id="ctf-footer-social-reddit" loading="lazy"></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" title="X" id="ctf-footer-link-x"><img
-                                src="images/twitter-X.png" class="img-fluid" alt="X (Twitter)"
-                                id="ctf-footer-social-x"></a>
+                                src="images/twitter-X.png" class="img-fluid" alt="Crystalfall X Twitter"
+                                id="ctf-footer-social-x" loading="lazy"></a>
                         <a href="#" target="_blank" rel="noopener noreferrer" title="youtube"
-                            id="ctf-footer-link-youtube"><img src="images/youtube.png" class="img-fluid" alt="YouTube"
-                                id="ctf-footer-social-youtube"></a>
+                            id="ctf-footer-link-youtube"><img src="images/youtube.png" class="img-fluid"
+                                alt="Crystalfall YouTube" id="ctf-footer-social-youtube" loading="lazy"></a>
                     </div>
                     <p class="footer-text-contact" id="ctf-footer-contact">If you encounter any issues with
                         pre-registration, please contact us <a href="https://playpark.com/support-crystalfall/"
                             target="_blank" rel="noopener noreferrer">here</a>.</p>
                 </div>
             </div>
+        </div>
     </section>
 
     <footer>
